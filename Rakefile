@@ -2,27 +2,32 @@
 
 require "digest/sha1"
 require "mini_portile2"
+require "rake/clean"
 require "rake/packagetask"
 require "yaml"
 
 # extend MiniPortile for local compilation
 require_relative "src/custom_portile"
 
-SUPPORTED_PLATFORMS = %w(
-  aarch64-linux-musl
-  x86_64-linux-musl
-  aarch64-apple-darwin20.0
-  x86_64-apple-darwin20.0
-)
-
-HAVERSACK_VERSION = "0.4.0"
+HAVERSACK_VERSION = "0.5.0"
 
 directory "downloads"
 directory "lib"
 directory "tmp"
 
+CLEAN.concat(["lib", "tmp"])
+CLOBBER.concat(["downloads", "pkg"])
+
 # load libs.yml
 libs = YAML.safe_load(File.read("libs.yml"))
+
+# build list of platforms from `libs`
+SUPPORTED_PLATFORMS = Set.new
+libs.each do |lib|
+  lib["binaries"].each do |binary|
+    SUPPORTED_PLATFORMS << binary["platform"]
+  end
+end
 
 # define tasks for download of each platform
 libs.each do |lib|
@@ -51,7 +56,7 @@ libs.each do |lib|
         if url = found["url"]
           port.files << {
             url: found["url"],
-            sha256: found[:sha256],
+            sha256: found["sha256"],
           }
         end
 
