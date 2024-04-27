@@ -8,13 +8,6 @@ require "yaml"
 # extend MiniPortile for local compilation
 require_relative "src/custom_portile"
 
-SUPPORTED_PLATFORMS = %w(
-  aarch64-linux-musl
-  x86_64-linux-musl
-  aarch64-apple-darwin20.0
-  x86_64-apple-darwin20.0
-)
-
 HAVERSACK_VERSION = "0.4.0"
 
 directory "downloads"
@@ -23,6 +16,14 @@ directory "tmp"
 
 # load libs.yml
 libs = YAML.safe_load(File.read("libs.yml"))
+
+# build list of platforms from `libs`
+SUPPORTED_PLATFORMS = Set.new
+libs.each do |lib|
+  lib["binaries"].each do |binary|
+    SUPPORTED_PLATFORMS << binary["platform"]
+  end
+end
 
 # define tasks for download of each platform
 libs.each do |lib|
