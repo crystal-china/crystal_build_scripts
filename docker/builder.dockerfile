@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.4
 
-FROM ruby:3.2.2-alpine AS base
+FROM ruby:3.3.1-alpine AS base
 
 # upgrade system and installed dependencies for security patches
 RUN --mount=type=cache,sharing=private,target=/var/cache/apk \
