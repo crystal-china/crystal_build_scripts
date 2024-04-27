@@ -70,6 +70,33 @@
       url: https://ghcr.io/v2/homebrew/core/libevent/blobs/sha256:d0557018f19021fb4675a20d9cefda5e13646558c276ab7b4f01f96144b432f8
       sha256: "d0557018f19021fb4675a20d9cefda5e13646558c276ab7b4f01f96144b432f8"
 
+- name: libsodium
+  version: "1.0.19"
+  # alpine package: libsodium-static, libsodium-dev
+  # homebrew formulae: libsodium
+  files:
+    - libsodium.a
+    - libsodium.pc
+  binaries:
+    - platform: aarch64-linux-musl
+      urls:
+        - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/aarch64/libsodium-static-1.0.19-r0.apk
+          sha256: "45dab6c348e57612ec9b62a38a2777f361db1056b4caeda1980d28f132a3615b"
+        - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/aarch64/libsodium-dev-1.0.19-r0.apk
+          sha256: "106bf80208212cf32f52ade42af4d141d7b63abb65bb8d9457500415692ac70f"
+    - platform: x86_64-linux-musl
+      urls:
+        - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/libsodium-static-1.0.19-r0.apk
+          sha256: "b43672e11e439cc4a045054c941e58a39810a3bd245e9d2be921cbfd882ad791"
+        - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/libsodium-dev-1.0.19-r0.apk
+          sha256: "a0d5f387896c14357247e313edcf19818f7a0612518de6471276ab8e629f64dc"
+    - platform: aarch64-apple-darwin21.0
+      url: https://ghcr.io/v2/homebrew/core/zlib/blobs/sha256:ebf10e203575beb64d6a8637ec2dc31774fa3141cfccab8ae7039f88b9efa7f6
+      sha256: "ebf10e203575beb64d6a8637ec2dc31774fa3141cfccab8ae7039f88b9efa7f6"
+    - platform: x86_64-apple-darwin21.0
+      url: https://ghcr.io/v2/homebrew/core/zlib/blobs/sha256:56bbfa3d7bd6a5ccf17ffa53ab926e67f24e74bd64b4740b56fd96c312e37c44
+      sha256: "56bbfa3d7bd6a5ccf17ffa53ab926e67f24e74bd64b4740b56fd96c312e37c44"
+
 - name: openssl
   version: "3.3.0"
   # alpine package: openssl-libs-static, openssl-dev
