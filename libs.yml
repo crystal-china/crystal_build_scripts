@@ -179,22 +179,22 @@
   binaries:
     - platform: aarch64-linux-musl
       urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/aarch64/yaml-static-0.2.5-r1.apk
-          sha256: "f65abf8794dc201defa388378b50a35061a191389b9e1c4d0e6c1e8db2efb730"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/aarch64/yaml-dev-0.2.5-r1.apk
-          sha256: "5d5f2bbf2f74381f1591286f07e41db472e030b33bcb09a5b1f7cc78b1f83d01"
+        - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/aarch64/yaml-static-0.2.5-r2.apk
+          sha256: "88450b523da001bd21362120655fb9cdb6d5c893cb90123a930286caa06b0154"
+        - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/aarch64/yaml-dev-0.2.5-r2.apk
+          sha256: "584028490e0287c6062229efceb7eb6fc9789daab5f6656ba184143b263fdc24"
     - platform: x86_64-linux-musl
       urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/yaml-static-0.2.5-r1.apk
-          sha256: "4cfcc2e5b78976baee42c157a8fa90e071b71d6b0cb9d3da752d9a295abe0cca"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/yaml-dev-0.2.5-r1.apk
-          sha256: "8fe18a91a6351d114ec7f3d2459886d833a6509dbd5ae9632c59ec2fbd0910b7"
-    - platform: aarch64-apple-darwin20.0
-      url: https://ghcr.io/v2/homebrew/core/libyaml/blobs/sha256:fe1082f3475a144261b41e2c3e0728b9331911b1cbfadfbc1f3d70d454709154
-      sha256: "fe1082f3475a144261b41e2c3e0728b9331911b1cbfadfbc1f3d70d454709154"
-    - platform: x86_64-apple-darwin20.0
-      url: https://ghcr.io/v2/homebrew/core/libyaml/blobs/sha256:83547fba540a38c30705a59a2e746952c68857212e823c6ee97c186e088f75cd
-      sha256: "83547fba540a38c30705a59a2e746952c68857212e823c6ee97c186e088f75cd"
+        - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/yaml-static-0.2.5-r2.apk
+          sha256: "4ba9f7da0dbf686ea1c1aaa0b1817d6bfd2869479d5045b12f0ffdec578c6dc6"
+        - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/yaml-dev-0.2.5-r2.apk
+          sha256: "63e26e9ac39e47c221ac0f52264b8fbad521a8c96d817f21fd7a3e737ff88fb6"
+    - platform: aarch64-apple-darwin21.0
+      url: https://ghcr.io/v2/homebrew/core/libyaml/blobs/sha256:a436da33a05f805258c5951a365dec4e8d70a908dbe5dacdeb6b2ecd0efd5024
+      sha256: "a436da33a05f805258c5951a365dec4e8d70a908dbe5dacdeb6b2ecd0efd5024"
+    - platform: x86_64-apple-darwin21.0
+      url: https://ghcr.io/v2/homebrew/core/libyaml/blobs/sha256:dbd54ce703c6d8eb77e708f75b4730ad2653d28f6291c4a26dc22158beb3f210
+      sha256: "dbd54ce703c6d8eb77e708f75b4730ad2653d28f6291c4a26dc22158beb3f210"
 
 - name: zlib
   version: "1.2.13"
