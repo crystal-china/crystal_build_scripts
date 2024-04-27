@@ -9,7 +9,7 @@ require "yaml"
 # extend MiniPortile for local compilation
 require_relative "src/custom_portile"
 
-HAVERSACK_VERSION = "0.5.1"
+HAVERSACK_VERSION = "0.6.0"
 
 directory "downloads"
 directory "lib"
