@@ -21,7 +21,7 @@
       sha256: "9f2c45bbb24805adaec4a3be2cbedad416ec8ff46a8ea558e1e11c0b7cec3ced"
 
 - name: gmp
-  version: "6.2.1"
+  version: "6.3.0"
   # alpine package: gmp-dev
   # homebrew formulae: gmp
   files:
@@ -29,17 +29,17 @@
     - gmp.pc
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/aarch64/gmp-dev-6.2.1-r3.apk
-      sha256: "0e1fb3ca24ec25ecff5027d5ddb2acdca8257bfa0493dc9eb6f11660ffbdcb67"
+      url: https://dl-cdn.alpinelinux.org/alpine/edge/main/aarch64/gmp-dev-6.3.0-r0.apk
+      sha256: "395214d980ad987aaa5f21a4976378e52b6e162146a4a8eb51256b4a9125607e"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/gmp-dev-6.2.1-r3.apk
-      sha256: "893afa4b89cae681c5875571e651dc87cfe48f28997ad299e172a9e09287ab9f"
-    - platform: aarch64-apple-darwin20.0
-      url: https://ghcr.io/v2/homebrew/core/gmp/blobs/sha256:491220f1ff2c662b96295d931a80702523eeaee681d7305fb02b561e527dcbb8
-      sha256: "491220f1ff2c662b96295d931a80702523eeaee681d7305fb02b561e527dcbb8"
-    - platform: x86_64-apple-darwin20.0
-      url: https://ghcr.io/v2/homebrew/core/gmp/blobs/sha256:e566452815d2ff5dc66da160bd1cd3d9cf02a17a07284cf0bac46496133383ae
-      sha256: "e566452815d2ff5dc66da160bd1cd3d9cf02a17a07284cf0bac46496133383ae"
+      url: https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/gmp-dev-6.3.0-r0.apk
+      sha256: "9a50ade4229e0d1f09466504979782c7f22a8df3b746879a76779a307e571d43"
+    - platform: aarch64-apple-darwin21.0
+      url: https://ghcr.io/v2/homebrew/core/gmp/blobs/sha256:2115b33b8b4052f91ffb85e476c7fc0388cf4e614af1ce6453b35e6d25473911
+      sha256: "2115b33b8b4052f91ffb85e476c7fc0388cf4e614af1ce6453b35e6d25473911"
+    - platform: x86_64-apple-darwin21.0
+      url: https://ghcr.io/v2/homebrew/core/gmp/blobs/sha256:b04023f65b8c79c45798a4bfd97fdbeb10f1bf9e8416e22e8eeedbd9b2a8c102
+      sha256: "b04023f65b8c79c45798a4bfd97fdbeb10f1bf9e8416e22e8eeedbd9b2a8c102"
 
 - name: libevent
   version: "2.1.12"
