@@ -53,22 +53,22 @@
   binaries:
     - platform: aarch64-linux-musl
       urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/aarch64/libevent-static-2.1.12-r6.apk
-          sha256: "8d00519c5177e07471a3c7b0441b8d11bb64935a59809a888a681350b67bb4ad"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/aarch64/libevent-dev-2.1.12-r6.apk
-          sha256: "e649b0f7a4af2787e38ebe2082c4b12ebe0e46881e6ba7b1a5a934cd3869694e"
+        - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/aarch64/libevent-static-2.1.12-r7.apk
+          sha256: "8b3d355d60e32fe0f70393866fcb594979787982665cee2e8632e04c67bf3c81"
+        - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/aarch64/libevent-dev-2.1.12-r7.apk
+          sha256: "2a826089ecee1dfc27d020029cd7621d0cc2c8afe2a97a1304d9ebf65ca3361d"
     - platform: x86_64-linux-musl
       urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/libevent-static-2.1.12-r6.apk
-          sha256: "c80052235c415526885d587739ca892513662bd5eefb9c37df1b6ec6bb003697"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/libevent-dev-2.1.12-r6.apk
-          sha256: "a8e50e4dbfebdbba2f6b35e6e344df2f33b7a80059b29fe54bd525c485973431"
-    - platform: aarch64-apple-darwin20.0
-      url: https://ghcr.io/v2/homebrew/core/libevent/blobs/sha256:53ca41440aee8d770530b0de6e655d570028afe0a99ed0e4e16f83af29e06ecb
-      sha256: "53ca41440aee8d770530b0de6e655d570028afe0a99ed0e4e16f83af29e06ecb"
-    - platform: x86_64-apple-darwin20.0
-      url: https://ghcr.io/v2/homebrew/core/libevent/blobs/sha256:45758b448d82b82b6bea52bc9a72593ef22f04ebdaa4b4230cadf12768252e22
-      sha256: "45758b448d82b82b6bea52bc9a72593ef22f04ebdaa4b4230cadf12768252e22"
+        - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/libevent-static-2.1.12-r7.apk
+          sha256: "9580e0159e27465bc9fc7990ef04b2dab048d0f8863185960b10f60183d41b17"
+        - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/libevent-dev-2.1.12-r7.apk
+          sha256: "009383e85d385151eb6df3f681aa2195cf19699872503844bed5edaa8ad8b7ae"
+    - platform: aarch64-apple-darwin21.0
+      url: https://ghcr.io/v2/homebrew/core/libevent/blobs/sha256:a24d682548fb7cb11c127932240cced5d6fdb16feaaa6dc2ab3a7f0833e5df2e
+      sha256: "a24d682548fb7cb11c127932240cced5d6fdb16feaaa6dc2ab3a7f0833e5df2e"
+    - platform: x86_64-apple-darwin21.0
+      url: https://ghcr.io/v2/homebrew/core/libevent/blobs/sha256:d0557018f19021fb4675a20d9cefda5e13646558c276ab7b4f01f96144b432f8
+      sha256: "d0557018f19021fb4675a20d9cefda5e13646558c276ab7b4f01f96144b432f8"
 
 - name: openssl
   version: "3.1.3"
