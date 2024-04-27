@@ -51,7 +51,7 @@ libs.each do |lib|
         if url = found["url"]
           port.files << {
             url: found["url"],
-            sha256: found[:sha256],
+            sha256: found["sha256"],
           }
         end
 
