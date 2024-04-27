@@ -143,7 +143,7 @@
       sha256: "af0d9f0935efc5c6a7a18ae15d399a65998ea5915e4c412a7620fafaf342c833"
 
 - name: sqlite
-  version: "3.41.2"
+  version: "3.45.3"
   # alpine package: sqlite-static, sqlite-dev
   # homebrew formulae: sqlite
   files:
@@ -152,22 +152,22 @@
   binaries:
     - platform: aarch64-linux-musl
       urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/aarch64/sqlite-static-3.41.2-r2.apk
-          sha256: "b29626bfc923908bbefa45e1da10a102b8bb0315792ec84776c82a7570965513"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/aarch64/sqlite-dev-3.41.2-r2.apk
-          sha256: "f726fa8cd32faa0ea099dd48a99c5ba2109ebadb7287ef11fe205f46ed0e8a53"
+        - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/aarch64/sqlite-static-3.45.3-r0.apk
+          sha256: "01e3b6d0ad968acdab47d81926e8e4d71a73ffea75d9f061a2e0bf483ef76e1f"
+        - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/aarch64/sqlite-dev-3.45.3-r0.apk
+          sha256: "01b90dc653778d06484fe3c46d7c302f1e38f6cc2d6a5a973a0e067491cab035"
     - platform: x86_64-linux-musl
       urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/sqlite-static-3.41.2-r2.apk
-          sha256: "3633781ea836c1173b393c7396af0fb779c2d61df524cfb7990c07a885ddafe3"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/sqlite-dev-3.41.2-r2.apk
-          sha256: "43f98076a0c5a9921b18767f226370f25fcd43512beb3b25151e75f63c40dceb"
-    - platform: aarch64-apple-darwin20.0
-      url: https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:78d4c5470ab9287a5abc1f3d8bafe92d6d416ec375cbd3650ecb26ff1b0531ae
-      sha256: "78d4c5470ab9287a5abc1f3d8bafe92d6d416ec375cbd3650ecb26ff1b0531ae"
-    - platform: x86_64-apple-darwin20.0
-      url: https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:5fb0686e712e6623bee8bc1ef2cac08585fba4a6e5b3d5962b4a8f1f22c11edd
-      sha256: "5fb0686e712e6623bee8bc1ef2cac08585fba4a6e5b3d5962b4a8f1f22c11edd"
+        - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/sqlite-static-3.45.3-r0.apk
+          sha256: "0ebbd6066ffb21ce45e52c58c1b26dc7ba59cffd8dd4517cf1866bc490a8c30b"
+        - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/sqlite-dev-3.45.3-r0.apk
+          sha256: "c94df31606a49623cbd691542552966e83709cd610f1e6630ec37c8bbab68744"
+    - platform: aarch64-apple-darwin21.0
+      url: https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:e51cd4fb90a3a233f8b19d0068f1f4dfd537198be60b25261069b86a463090d5
+      sha256: "e51cd4fb90a3a233f8b19d0068f1f4dfd537198be60b25261069b86a463090d5"
+    - platform: x86_64-apple-darwin21.0
+      url: https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:71900ed318d6491eac58d5828b46e939f8dbcb5e1b1cb70c6bbc8c21bbe93192
+      sha256: "71900ed318d6491eac58d5828b46e939f8dbcb5e1b1cb70c6bbc8c21bbe93192"
 
 - name: yaml
   version: "0.2.5"
