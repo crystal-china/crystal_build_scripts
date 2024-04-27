@@ -2,6 +2,7 @@
 
 require "digest/sha1"
 require "mini_portile2"
+require "rake/clean"
 require "rake/packagetask"
 require "yaml"
 
@@ -13,6 +14,9 @@ HAVERSACK_VERSION = "0.5.0"
 directory "downloads"
 directory "lib"
 directory "tmp"
+
+CLEAN.concat(["lib", "tmp"])
+CLOBBER.concat(["downloads", "pkg"])
 
 # load libs.yml
 libs = YAML.safe_load(File.read("libs.yml"))
