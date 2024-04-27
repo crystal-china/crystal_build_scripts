@@ -109,20 +109,20 @@
     - libpcre.pc
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/aarch64/pcre-dev-8.45-r3.apk
-      sha256: "a01dbff9edef879de4713303c7ff0e50add8b43e2a44bf19dc26d8ea60a14506"
+      url: https://dl-cdn.alpinelinux.org/alpine/edge/main/aarch64/pcre-dev-8.45-r3.apk
+      sha256: "6e01f42479b5bfa810c0e1ee9e5404adf8c127073a455a47b0e75212d6b7d630"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/pcre-dev-8.45-r3.apk
-      sha256: "7b3b54a546c7a6e7e64f791b2126e7fea9659e0dd094866dd4a6ceb1c459a30f"
-    - platform: aarch64-apple-darwin20.0
-      url: https://ghcr.io/v2/homebrew/core/pcre/blobs/sha256:2d6bfcafce9da9739e32ee433087e69a78cda3f18291350953e6ad260fefc50b
-      sha256: "2d6bfcafce9da9739e32ee433087e69a78cda3f18291350953e6ad260fefc50b"
-    - platform: x86_64-apple-darwin20.0
-      url: https://ghcr.io/v2/homebrew/core/pcre/blobs/sha256:fb2fefbe1232706a603a6b385fc37253e5aafaf3536cb68b828ad1940b95e601
-      sha256: "fb2fefbe1232706a603a6b385fc37253e5aafaf3536cb68b828ad1940b95e601"
+      url: https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/pcre-dev-8.45-r3.apk
+      sha256: "ea9c15d3c47a24582aae8d5e3d9b05834ad67eb33d2aa5710ff816979f292c3c"
+    - platform: aarch64-apple-darwin21.0
+      url: https://ghcr.io/v2/homebrew/core/pcre/blobs/sha256:11193fd0a113c0bb330b1c2c21ab6f40d225c1893a451bba85e8a1562b914a1c
+      sha256: "11193fd0a113c0bb330b1c2c21ab6f40d225c1893a451bba85e8a1562b914a1c"
+    - platform: x86_64-apple-darwin21.0
+      url: https://ghcr.io/v2/homebrew/core/pcre/blobs/sha256:5e5cc7a5bf8bb6488ec57d4263bf6b0bc89e93252a0a2460f846de29373162d8
+      sha256: "5e5cc7a5bf8bb6488ec57d4263bf6b0bc89e93252a0a2460f846de29373162d8"
 
 - name: pcre2
-  version: "10.42"
+  version: "10.43"
   # alpine package: pcre2-dev
   # homebrew formulae: pcre2
   files:
@@ -130,17 +130,17 @@
     - libpcre2-8.pc
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/aarch64/pcre2-dev-10.42-r1.apk
-      sha256: "64c664c729871e56b552e6ecb726e8e66444b500956f5dd9b8b7bed90aa90483"
+      url: https://dl-cdn.alpinelinux.org/alpine/edge/main/aarch64/pcre2-dev-10.43-r0.apk
+      sha256: "87ad2e5dad1e7b1057cf27d2d9b647d46fd0398fcb453934d11ed8164d898b7d"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/pcre2-dev-10.42-r1.apk
-      sha256: "c0bb9d03c52d32fc2a88a43c5e5404230c0b24a4e53a761700cb54896f2d159b"
-    - platform: aarch64-apple-darwin20.0
-      url: https://ghcr.io/v2/homebrew/core/pcre2/blobs/sha256:69483f445671a54f0e03f96b7ef41218913f793a84c32cf98de1e79aa029fbf1
-      sha256: "69483f445671a54f0e03f96b7ef41218913f793a84c32cf98de1e79aa029fbf1"
-    - platform: x86_64-apple-darwin20.0
-      url: https://ghcr.io/v2/homebrew/core/pcre2/blobs/sha256:1d858ca3171ba18bc70ca3980bafca1ce5ec65eb6550ff87d4f5facae0dd3b32
-      sha256: "1d858ca3171ba18bc70ca3980bafca1ce5ec65eb6550ff87d4f5facae0dd3b32"
+      url: https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/pcre2-dev-10.43-r0.apk
+      sha256: "c09b3fb9041caef04bee081c09045de576c1200197a2f0240a1a81e3b5e3e167"
+    - platform: aarch64-apple-darwin21.0
+      url: https://ghcr.io/v2/homebrew/core/pcre2/blobs/sha256:ce23b3c3a974b28c4a88537a92b33eb97d36ef6677f7d486264e391358573465
+      sha256: "ce23b3c3a974b28c4a88537a92b33eb97d36ef6677f7d486264e391358573465"
+    - platform: x86_64-apple-darwin21.0
+      url: https://ghcr.io/v2/homebrew/core/pcre2/blobs/sha256:af0d9f0935efc5c6a7a18ae15d399a65998ea5915e4c412a7620fafaf342c833
+      sha256: "af0d9f0935efc5c6a7a18ae15d399a65998ea5915e4c412a7620fafaf342c833"
 
 - name: sqlite
   version: "3.41.2"
