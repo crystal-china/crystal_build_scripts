@@ -91,11 +91,11 @@
         - url: https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/libsodium-dev-1.0.19-r0.apk
           sha256: "a0d5f387896c14357247e313edcf19818f7a0612518de6471276ab8e629f64dc"
     - platform: aarch64-apple-darwin21.0
-      url: https://ghcr.io/v2/homebrew/core/zlib/blobs/sha256:ebf10e203575beb64d6a8637ec2dc31774fa3141cfccab8ae7039f88b9efa7f6
-      sha256: "ebf10e203575beb64d6a8637ec2dc31774fa3141cfccab8ae7039f88b9efa7f6"
+      url: https://ghcr.io/v2/homebrew/core/libsodium/blobs/sha256:2bb039f392d4f01cda78cac11b30bda1a37e8474ba8f583e47ce710403a1f630
+      sha256: "2bb039f392d4f01cda78cac11b30bda1a37e8474ba8f583e47ce710403a1f630"
     - platform: x86_64-apple-darwin21.0
-      url: https://ghcr.io/v2/homebrew/core/zlib/blobs/sha256:56bbfa3d7bd6a5ccf17ffa53ab926e67f24e74bd64b4740b56fd96c312e37c44
-      sha256: "56bbfa3d7bd6a5ccf17ffa53ab926e67f24e74bd64b4740b56fd96c312e37c44"
+      url: https://ghcr.io/v2/homebrew/core/libsodium/blobs/sha256:68ce4512d9bf1e061edd2d0c09c809d7d63ca61a904802a0bf60cb935613c484
+      sha256: "68ce4512d9bf1e061edd2d0c09c809d7d63ca61a904802a0bf60cb935613c484"
 
 - name: openssl
   version: "3.3.0"
