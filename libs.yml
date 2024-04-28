@@ -21,7 +21,7 @@
       sha256: "9f2c45bbb24805adaec4a3be2cbedad416ec8ff46a8ea558e1e11c0b7cec3ced"
 
 - name: gmp
-  version: "6.3.0"
+  version: "6.2.1"
   # alpine package: gmp-dev
   # homebrew formulae: gmp
   files:
@@ -29,17 +29,17 @@
     - gmp.pc
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/edge/main/aarch64/gmp-dev-6.3.0-r0.apk
-      sha256: "395214d980ad987aaa5f21a4976378e52b6e162146a4a8eb51256b4a9125607e"
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/aarch64/gmp-dev-6.2.1-r3.apk
+      sha256: "c05f5c9a8fe1400607761a6946137ec338e99595645cab3e3038374e4e46e461"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/gmp-dev-6.3.0-r0.apk
-      sha256: "9a50ade4229e0d1f09466504979782c7f22a8df3b746879a76779a307e571d43"
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/gmp-dev-6.2.1-r3.apk
+      sha256: "c43fd9d028107e0b770a29fdd50d58fb7e202ca009275c925b1672ce2e996023"
     - platform: aarch64-apple-darwin
-      url: https://ghcr.io/v2/homebrew/core/gmp/blobs/sha256:2115b33b8b4052f91ffb85e476c7fc0388cf4e614af1ce6453b35e6d25473911
-      sha256: "2115b33b8b4052f91ffb85e476c7fc0388cf4e614af1ce6453b35e6d25473911"
+      url: https://ghcr.io/v2/homebrew/core/gmp/blobs/sha256:a43a2ae4c44d90626b835a968a32327c8b8bbf754ec1d2590f8ac656c71dace9
+      sha256: "a43a2ae4c44d90626b835a968a32327c8b8bbf754ec1d2590f8ac656c71dace9"
     - platform: x86_64-apple-darwin
-      url: https://ghcr.io/v2/homebrew/core/gmp/blobs/sha256:b04023f65b8c79c45798a4bfd97fdbeb10f1bf9e8416e22e8eeedbd9b2a8c102
-      sha256: "b04023f65b8c79c45798a4bfd97fdbeb10f1bf9e8416e22e8eeedbd9b2a8c102"
+      url: https://ghcr.io/v2/homebrew/core/gmp/blobs/sha256:dddc6d8c871c92f6e5fb1249c28768aa2b4b47c38836a69cf787a639cf5eee73
+      sha256: "dddc6d8c871c92f6e5fb1249c28768aa2b4b47c38836a69cf787a639cf5eee73"
 
 - name: libevent
   version: "2.1.12"
