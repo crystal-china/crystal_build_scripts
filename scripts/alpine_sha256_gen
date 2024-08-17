@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -eu
+
+package_name=$1
+version=v3.20
+
+url_x86_64=https://dl-cdn.alpinelinux.org/alpine/$version/main/x86_64/${package_name}
+url_aarch64=https://dl-cdn.alpinelinux.org/alpine/$version/main/aarch64/${package_name}
+
+mirror_url_x86_64=https://mirrors.tuna.tsinghua.edu.cn/alpine/$version/main/x86_64/${package_name}
+mirror_url_aarch64=https://mirrors.tuna.tsinghua.edu.cn/alpine/$version/main/aarch64/${package_name}
+
+wget -O /tmp/${package_name}.aarch64 ${mirror_url_aarch64-$url_aarch64}
+wget -O /tmp/${package_name}.x86_64 ${mirror_url_x86_64-$url_x86_64}
+
+sha_aarch64=$(sha256sum /tmp/${package_name}.aarch64 |awk '{print $1}')
+echo "url: $url_aarch64"
+echo "sha256: \"$sha_aarch64\""
+
+sha_x86_64=$(sha256sum /tmp/${package_name}.x86_64 |awk '{print $1}')
+echo "url: $url_x86_64"
+echo "sha256: \"$sha_x86_64\""
