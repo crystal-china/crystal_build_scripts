@@ -114,6 +114,10 @@ Then override specified yaml section use the above url,sha256 output part.
 4. Copy/Paste the specified sha256 hash into correct position.
 5. iconv is necessary only for Darwin, you don't need update it for alpine.
 
+## How it works
+
+Check [use_zig_cc_as_an_alternative_linker](docs/use_zig_cc_as_an_alternative_linker.md)
+
 ## Contributing
 
 If you use other third-party libraries, please feel free to submit an issue, Or
