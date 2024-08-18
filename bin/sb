@@ -151,8 +151,8 @@ if echo "$*" |grep -F -qs -e '--target='; then
     declare -A libname_map=(
         ["x86_64-linux-musl"]="x86_64-linux-musl"
         ["aarch64-linux-musl"]="aarch64-linux-musl"
-        ["x86_64-darwin"]="x86_64-apple-darwin"
-        ["aarch64-darwin"]="aarch64-apple-darwin"
+        ["x86_64-darwin"]="x86_64-monterey"
+        ["aarch64-darwin"]="aarch64-monterey"
     )
 
     cr_target=$(echo $* |sed 's#.*--target=\([a-z0-9_-]*\).*#\1#')
