@@ -55,7 +55,7 @@ _prepend_dir_context_if_necessary() {
 _prepend_path_if_relative() {
     case "$2" in
         /* ) printf '%s\n' "$2" ;;
-         * ) printf '%s\n' "$1/$2" ;;
+        * ) printf '%s\n' "$1/$2" ;;
     esac
 }
 
@@ -123,8 +123,8 @@ _gnu_stat_readlink() {
     local output
     output=$(stat -c %N -- "$1" 2>/dev/null) &&
 
-    printf '%s\n' "$output" |
-        sed "s/^‘[^’]*’ -> ‘\(.*\)’/\1/
+        printf '%s\n' "$output" |
+            sed "s/^‘[^’]*’ -> ‘\(.*\)’/\1/
              s/^'[^']*' -> '\(.*\)'/\1/"
     # FIXME: handle newlines
 }
@@ -135,15 +135,47 @@ _bsd_stat_readlink() {
 
 ################## https://github.com/mkropat/sh-realpath #####################
 
-TARGET_TRIPLET="x86_64-linux-musl"
-TARGET_PLATFORM="${TARGET_TRIPLET}"
-
 SCRIPT_PATH=$(realpath "$0")
 SCRIPT_DIR=$(dirname $SCRIPT_PATH)
 SCRIPT_PARENT=$(dirname $SCRIPT_DIR)
 
-LIBS_ROOT="${SCRIPT_PARENT}/lib"
+if echo "$*" |grep -F -qs -e '--target='; then
+    # For use hash map, BASH 4.0 is requried.
+    declare -A zig_target_map=(
+        ["x86_64-linux-musl"]="x86_64-linux-musl"
+        ["aarch64-linux-musl"]="aarch64-linux-musl"
+        ["x86_64-darwin"]="x86_64-macos-none"
+        ["aarch64-darwin"]="aarch64-macos-none"
+    )
 
-LINK_OPTS="-L${LIBS_ROOT}/${TARGET_PLATFORM}"
+    declare -A libname_map=(
+        ["x86_64-linux-musl"]="x86_64-linux-musl"
+        ["aarch64-linux-musl"]="aarch64-linux-musl"
+        ["x86_64-darwin"]="x86_64-apple-darwin"
+        ["aarch64-darwin"]="aarch64-apple-darwin"
+    )
 
-exec zig cc -target ${TARGET_TRIPLET} ${LINK_OPTS} "$@"
+    cr_target=$(echo $* |sed 's#.*--target=\([a-z0-9_-]*\).*#\1#')
+
+    if [[ "$cr_target" =~ -darwin ]]; then
+        build_args="$@ -Duse_libiconv"
+    else
+        build_args="$@"
+    fi
+
+    # delete --progress if pass this option.
+    build_args=${build_args//--progress/}
+
+    tmpfile="$(mktemp -d)/$$"
+
+    shards build ${build_args} "$@" |
+        grep '^cc ' |
+        sed "s#^cc#zig cc -target ${zig_target_map[$cr_target]}#" |
+        sed "s#-L[^ ]*#-L${SCRIPT_PARENT}/lib/${libname_map[$cr_target]}#" |
+        sed "s#.*#& -lunwind#" |
+        tee $tmpfile
+    chmod +x $tmpfile &&
+        bash $tmpfile
+else
+    shards build "$@"
+fi
