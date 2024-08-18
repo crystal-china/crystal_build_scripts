@@ -62,6 +62,57 @@ bin/college: Mach-O 64-bit x86_64 executable, flags:<NOUNDEFS|DYLDLINK|TWOLEVEL|
 zig cc -target aarch64-macos-none bin/college.o -o bin/college  -rdynamic -static -L/home/zw963/Crystal/crystal-china/magic-haversack/lib/aarch64-monterey -lgmp -lyaml -lz `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libssl || printf %s '-lssl -lcrypto'` `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libcrypto || printf %s '-lcrypto'` -lpcre2-8 -lgc -lpthread -ldl -levent -liconv -lunwind
 ```
  I have been using this workflow for a long time, and it work quite well, so i don't want add unnecessary complexity for same purpose, don't misunderstand me, i use docker quite well, but I use it only necessary.
+ 
+## Update libraries version
+
+### Steps to update libraries version for alpine:
+
+1. Visit https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/ use browser, and find out the latest package name, e.g. gc-dev-8.2.6-r0.apk
+2. run `./scripts/alpine_sha256_gen gc-dev-8.2.6-r0.apk' in the terminal, it will output like following:
+
+```sh
+ ╰─ $ ./scripts/alpine_sha256_gen gc-dev-8.2.6-r0.apk
+--2024-08-18 16:27:08--  https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/aarch64/gc-dev-8.2.6-r0.apk
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving mirrors.tuna.tsinghua.edu.cn (mirrors.tuna.tsinghua.edu.cn)... 2402:f000:1:400::2, 101.6.15.130
+Connecting to mirrors.tuna.tsinghua.edu.cn (mirrors.tuna.tsinghua.edu.cn)|2402:f000:1:400::2|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 538608 (526K) [application/octet-stream]
+Saving to: ‘/tmp/gc-dev-8.2.6-r0.apk.aarch64’
+
+/tmp/gc-dev-8.2.6-r0.apk.aarc 100%[===============================================>] 525.98K   987KB/s    in 0.5s
+
+2024-08-18 16:27:09 (987 KB/s) - ‘/tmp/gc-dev-8.2.6-r0.apk.aarch64’ saved [538608/538608]
+
+--2024-08-18 16:27:09--  https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/x86_64/gc-dev-8.2.6-r0.apk
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving mirrors.tuna.tsinghua.edu.cn (mirrors.tuna.tsinghua.edu.cn)... 2402:f000:1:400::2, 101.6.15.130
+Connecting to mirrors.tuna.tsinghua.edu.cn (mirrors.tuna.tsinghua.edu.cn)|2402:f000:1:400::2|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 546905 (534K) [application/octet-stream]
+Saving to: ‘/tmp/gc-dev-8.2.6-r0.apk.x86_64’
+
+/tmp/gc-dev-8.2.6-r0.apk.x86_ 100%[===============================================>] 534.09K  1.06MB/s    in 0.5s
+
+2024-08-18 16:27:10 (1.06 MB/s) - ‘/tmp/gc-dev-8.2.6-r0.apk.x86_64’ saved [546905/546905]
+
+url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/gc-dev-8.2.6-r0.apk
+sha256: "6a2eec3ee1117941e25549a044f4d8db8bfc9fe3083db767e50b50c7100e6770"
+url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/gc-dev-8.2.6-r0.apk
+sha256: "b9d32564cd61897c56b3d57eb8cf573f9f38bd591f75f74d5b20bceddaaf94f2"
+```
+
+Then override specified yaml section use the above url,sha256 output part.
+
+3. you probably need replace alpine version with latest version before running `alpine_sha256_gen`,current use alpine v3.20, except gmp, 6.3.0 still not work for now, i create a [issue](https://github.com/ziglang/zig/issues/21112) for tracing it.
+
+### Steps to update libraries version For Darwin:
+
+1. Visit https://github.com/Homebrew/homebrew-core/tree/master/Formula
+2. Typing t, then filter with the package name(probably use different name with alpine)
+3. Select the oldest macOS code name which support both x86_64/aarch64. for now, we use monterey.
+4. Copy/Paste the specified sha256 hash into correct position.
+5. iconv is necessary only for Darwin, you don't need update it for alpine.
 
 ## Contributing
 
