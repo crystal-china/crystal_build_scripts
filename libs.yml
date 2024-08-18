@@ -12,6 +12,7 @@
 # 1. Visit https://github.com/Homebrew/homebrew-core/tree/master/Formula
 # 2. Typing t, then filter with the package name(probably use different name with alpine)
 # 3. Select the oldest macOS version which support x86_64 and arm64 version. for now, it use monterey
+# 4. Copy/Paste the specified sha256 hash into correct position.
 
 ---
 - name: gc
@@ -146,28 +147,6 @@
     - platform: x86_64-apple-darwin
       url: https://ghcr.io/v2/homebrew/core/openssl/3/blobs/sha256:06e6ff16eb23a8fd4dc9222e6cf5bcf2b680d250ba0233e6e0c0dc6e9616cb34
       sha256: "06e6ff16eb23a8fd4dc9222e6cf5bcf2b680d250ba0233e6e0c0dc6e9616cb34"
-
-- name: pcre
-  version: "8.45-r3"
-  darwin_version: "8.45"
-  # alpine package: pcre-dev
-  # homebrew formulae: pcre
-  files:
-    - libpcre.a
-    - libpcre.pc
-  binaries:
-    - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/pcre-dev-8.45-r3.apk
-      sha256: "e6601a1cdd86a228b5c06c188a88e2ae5738c8eaab11544cd6f188cebb017a8e"
-    - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/pcre-dev-8.45-r3.apk
-      sha256: "40e8941266cda8f98b697e742bb961637d464c9e6666dc5fc4fc7834da84c5da"
-    - platform: aarch64-apple-darwin
-      url: https://ghcr.io/v2/homebrew/core/pcre/blobs/sha256:11193fd0a113c0bb330b1c2c21ab6f40d225c1893a451bba85e8a1562b914a1c
-      sha256: "11193fd0a113c0bb330b1c2c21ab6f40d225c1893a451bba85e8a1562b914a1c"
-    - platform: x86_64-apple-darwin
-      url: https://ghcr.io/v2/homebrew/core/pcre/blobs/sha256:5e5cc7a5bf8bb6488ec57d4263bf6b0bc89e93252a0a2460f846de29373162d8
-      sha256: "5e5cc7a5bf8bb6488ec57d4263bf6b0bc89e93252a0a2460f846de29373162d8"
 
 - name: pcre2
   version: "10.43-r0"
