@@ -1,3 +1,6 @@
+# offical: https://dl-cdn.alpinelinux.org/alpine
+# mirrors: https://mirrors.tuna.tsinghua.edu.cn/alpine
+
 ---
 - name: gc
   version: "8.2.6-r0"
@@ -9,10 +12,10 @@
     - bdw-gc.pc
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/gc-dev-8.2.6-r0.apk
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/aarch64/gc-dev-8.2.6-r0.apk
       sha256: "6a2eec3ee1117941e25549a044f4d8db8bfc9fe3083db767e50b50c7100e6770"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/gc-dev-8.2.6-r0.apk
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/x86_64/gc-dev-8.2.6-r0.apk
       sha256: "b9d32564cd61897c56b3d57eb8cf573f9f38bd591f75f74d5b20bceddaaf94f2"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/bdw-gc/blobs/sha256:d98f35081558a6411f47913a4da75a1d72449e08534ea27e113f3872b52654b2
@@ -31,10 +34,10 @@
     - gmp.pc
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/aarch64/gmp-dev-6.2.1-r3.apk
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/main/aarch64/gmp-dev-6.2.1-r3.apk
       sha256: "c05f5c9a8fe1400607761a6946137ec338e99595645cab3e3038374e4e46e461"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/gmp-dev-6.2.1-r3.apk
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/main/x86_64/gmp-dev-6.2.1-r3.apk
       sha256: "c43fd9d028107e0b770a29fdd50d58fb7e202ca009275c925b1672ce2e996023"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/gmp/blobs/sha256:2115b33b8b4052f91ffb85e476c7fc0388cf4e614af1ce6453b35e6d25473911
@@ -46,26 +49,18 @@
 - name: libevent
   version: "2.1.12-r7"
   darwin_version: "2.1.12"
-  # alpine package: libevent-static, libevent-dev
+  # alpine package: libevent-static
   # homebrew formulae: libevent
   files:
     - libevent.a
-    - libevent.pc
     - libevent_pthreads.a
-    - libevent_pthreads.pc
   binaries:
     - platform: aarch64-linux-musl
-      urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/libevent-static-2.1.12-r7.apk
-          sha256: "f3624bd54613bb4a8aa2f7bdd7eff4e22e49faf53d0e0a8ba41da68ab82e44c9"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/libevent-dev-2.1.12-r7.apk
-          sha256: "1b3e408e90bfa104470cc2f32b409561c69bf810ada187a82fc4c8d87a0a9fdd"
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/aarch64/libevent-static-2.1.12-r7.apk
+      sha256: "f3624bd54613bb4a8aa2f7bdd7eff4e22e49faf53d0e0a8ba41da68ab82e44c9"
     - platform: x86_64-linux-musl
-      urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/libevent-static-2.1.12-r7.apk
-          sha256: "5387ff4facac69d1b3a55b8061ac3d8961442fb0e2503ae37f03458f861d4728"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/libevent-dev-2.1.12-r7.apk
-          sha256: "0b4c8954f61c708ba899d564279801babdd971bba236186fb2f74027c68b7132"
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/x86_64/libevent-static-2.1.12-r7.apk
+      sha256: "5387ff4facac69d1b3a55b8061ac3d8961442fb0e2503ae37f03458f861d4728"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/libevent/blobs/sha256:a24d682548fb7cb11c127932240cced5d6fdb16feaaa6dc2ab3a7f0833e5df2e
       sha256: "a24d682548fb7cb11c127932240cced5d6fdb16feaaa6dc2ab3a7f0833e5df2e"
@@ -76,24 +71,17 @@
 - name: libsodium
   version: "1.0.19-r0"
   darwin_version: "1.0.20"
-  # alpine package: libsodium-static, libsodium-dev
+  # alpine package: libsodium-static
   # homebrew formulae: libsodium
   files:
     - libsodium.a
-    - libsodium.pc
   binaries:
     - platform: aarch64-linux-musl
-      urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/libsodium-static-1.0.19-r0.apk
-          sha256: "82677548636a1ad6296b39c8ff59da430439bbc25af6df80d3487720ee4101ef"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/libsodium-dev-1.0.19-r0.apk
-          sha256: "6491023cfc4c2f60f499ed23380ef114132eaedab3878faa498068bfb0ec17ed"
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/aarch64/libsodium-static-1.0.19-r0.apk
+      sha256: "82677548636a1ad6296b39c8ff59da430439bbc25af6df80d3487720ee4101ef"
     - platform: x86_64-linux-musl
-      urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/libsodium-static-1.0.19-r0.apk
-          sha256: "778bd9dcecac0d71e3078d33e4422a91872907fcc7d1110f872f196ce1016950"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/libsodium-dev-1.0.19-r0.apk
-          sha256: "3728ae718b33dbe225648c2b173081966ff5a31ba624065d4f18da1475cfd2d9"
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/x86_64/libsodium-static-1.0.19-r0.apk
+      sha256: "778bd9dcecac0d71e3078d33e4422a91872907fcc7d1110f872f196ce1016950"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/libsodium/blobs/sha256:25377f9e16747b9af732be608a966b580287d0854c2d530f23eea1235bca1ff7
       sha256: "25377f9e16747b9af732be608a966b580287d0854c2d530f23eea1235bca1ff7"
@@ -104,27 +92,18 @@
 - name: openssl
   version: "3.3.1-r3"
   darwin_version: "3.3.1"
-  # alpine package: openssl-libs-static, openssl-dev
+  # alpine package: openssl-libs-static
   # homebrew formulae: openssl@3
   files:
     - libcrypto.a
-    - libcrypto.pc
     - libssl.a
-    - libssl.pc
-    - openssl.pc
   binaries:
     - platform: aarch64-linux-musl
-      urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/openssl-libs-static-3.3.1-r3.apk
-          sha256: "2664eb568dfb976abee01649b328cd1fc0105a12f2986e1a250fa15d37889821"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/openssl-dev-3.3.1-r3.apk
-          sha256: "6cb104d306c5ba43677650f660335ee286bb67ef2d549f6fbb388d55ae7ff96f"
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/aarch64/openssl-libs-static-3.3.1-r3.apk
+      sha256: "2664eb568dfb976abee01649b328cd1fc0105a12f2986e1a250fa15d37889821"
     - platform: x86_64-linux-musl
-      urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/openssl-libs-static-3.3.1-r3.apk
-          sha256: "7578a1f58ba953bed45a50134c5f6452ddfb757e6ac629c31bfdb555dcfdc549"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/openssl-dev-3.3.1-r3.apk
-          sha256: "20808ea32d229dd4d8aa8419a2f16da32dccbd7aa22666e45984bbd623dcaea1"
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/x86_64/openssl-libs-static-3.3.1-r3.apk
+      sha256: "7578a1f58ba953bed45a50134c5f6452ddfb757e6ac629c31bfdb555dcfdc549"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/openssl/3/blobs/sha256:0d88c67b408ad9520a28d195418d14875f2237fbd808114763f980a7a9190831
       sha256: "0d88c67b408ad9520a28d195418d14875f2237fbd808114763f980a7a9190831"
@@ -139,13 +118,12 @@
   # homebrew formulae: pcre2
   files:
     - libpcre2-8.a
-    - libpcre2-8.pc
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/pcre2-dev-10.43-r0.apk
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/aarch64/pcre2-dev-10.43-r0.apk
       sha256: "7b06e6e657dda84ba4e8325dd1d10866cede40bf4437e928bb9f36c9c8b3134c"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/pcre2-dev-10.43-r0.apk
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/x86_64/pcre2-dev-10.43-r0.apk
       sha256: "c6198360f5693bd28784dda4bc34c84ea65a46441ad1d0d26b22ed6af4269878"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/pcre2/blobs/sha256:fe61ece0fe110928cbd9d325552064c1bc2b98a3dd6cc9f4039d0d41ead7fa83
@@ -157,24 +135,17 @@
 - name: sqlite
   version: "3.45.3-r1"
   darwin_version: 3.46.1
-  # alpine package: sqlite-static, sqlite-dev
+  # alpine package: sqlite-static
   # homebrew formulae: sqlite
   files:
     - libsqlite3.a
-    - sqlite3.pc
   binaries:
     - platform: aarch64-linux-musl
-      urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/sqlite-static-3.45.3-r1.apk
-          sha256: "68bb3320a2c6da35863883bbd9c53bc9be816f80a0c900be719544a40e2d271d"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/sqlite-dev-3.45.3-r1.apk
-          sha256: "05793dd45229abc3c6b21495a2a349c1c2f661632c5fe2e5f9d15d9f243f8576"
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/aarch64/sqlite-static-3.45.3-r1.apk
+      sha256: "68bb3320a2c6da35863883bbd9c53bc9be816f80a0c900be719544a40e2d271d"
     - platform: x86_64-linux-musl
-      urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/sqlite-static-3.45.3-r1.apk
-          sha256: "49349f9d2ad7ae52d09449b8c74e5335098fe957966c12fd908551164781a616"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/sqlite-dev-3.45.3-r1.apk
-          sha256: "dbf38f328f844eae06932a3dad7de124b871cbc777be3257ff1097dad641b6a3"
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/x86_64/sqlite-static-3.45.3-r1.apk
+      sha256: "49349f9d2ad7ae52d09449b8c74e5335098fe957966c12fd908551164781a616"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:b04e7f909acd9753598e0d00ea3eb5f409d219c8efd48888725812e7ca68bfa1
       sha256: "b04e7f909acd9753598e0d00ea3eb5f409d219c8efd48888725812e7ca68bfa1"
@@ -189,20 +160,13 @@
   # homebrew formulae: libyaml
   files:
     - libyaml.a
-    - yaml-0.1.pc
   binaries:
     - platform: aarch64-linux-musl
-      urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/yaml-static-0.2.5-r2.apk
-          sha256: "62f0f3e7b7d17a771a46c43ca4aeb0ad09de6d6456866c7e7f873331f1d169bc"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/yaml-dev-0.2.5-r2.apk
-          sha256: "94f1b47fc26f2aaa81f003cb43883fc919c9b26ed4c1401330437c482c27fe5e"
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/aarch64/yaml-static-0.2.5-r2.apk
+      sha256: "62f0f3e7b7d17a771a46c43ca4aeb0ad09de6d6456866c7e7f873331f1d169bc"
     - platform: x86_64-linux-musl
-      urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/yaml-static-0.2.5-r2.apk
-          sha256: "e0c27556f81c73535902b34e483d9fca7dff0e141f810ba679787b59501519d7"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/yaml-dev-0.2.5-r2.apk
-          sha256: "49dd20e04332de08e120fd3a45a5e0d42cdfd3c8f39f2bfeba4e5593eee06a4e"
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/x86_64/yaml-static-0.2.5-r2.apk
+      sha256: "e0c27556f81c73535902b34e483d9fca7dff0e141f810ba679787b59501519d7"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/libyaml/blobs/sha256:a436da33a05f805258c5951a365dec4e8d70a908dbe5dacdeb6b2ecd0efd5024
       sha256: "a436da33a05f805258c5951a365dec4e8d70a908dbe5dacdeb6b2ecd0efd5024"
@@ -213,24 +177,17 @@
 - name: zlib
   version: "1.3.1"
   darwin_versoin: "1.3.1"
-  # alpine package: zlib-static, zlib-dev
+  # alpine package: zlib-static
   # homebrew formulae: zlib
   files:
     - libz.a
-    - zlib.pc
   binaries:
     - platform: aarch64-linux-musl
-      urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/zlib-static-1.3.1-r1.apk
-          sha256: "d3e62012880c4990f9cd7839f91f793c98604c8f600446982b28a63edc96136f"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/zlib-dev-1.3.1-r1.apk
-          sha256: "9fdc87a10110fd1a94f4f8655e4b43318aca3b5c4b5e60bf34cd00714d6da1b3"
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/aarch64/zlib-static-1.3.1-r1.apk
+      sha256: "d3e62012880c4990f9cd7839f91f793c98604c8f600446982b28a63edc96136f"
     - platform: x86_64-linux-musl
-      urls:
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/zlib-static-1.3.1-r1.apk
-          sha256: "0b1e0233a287cbd798d3e0c3769f9d6b18e1cfe5e989caeb212fefd546879a38"
-        - url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/zlib-dev-1.3.1-r1.apk
-          sha256: "70f4e457248b2532ac1260d050762583f401a9b2d09afb54e41c238ffa875f56"
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/x86_64/zlib-static-1.3.1-r1.apk
+      sha256: "0b1e0233a287cbd798d3e0c3769f9d6b18e1cfe5e989caeb212fefd546879a38"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/zlib/blobs/sha256:ebf10e203575beb64d6a8637ec2dc31774fa3141cfccab8ae7039f88b9efa7f6
       sha256: "ebf10e203575beb64d6a8637ec2dc31774fa3141cfccab8ae7039f88b9efa7f6"
@@ -242,17 +199,17 @@
 - name: iconv
   version: "1.17"
   darwin_versoin: "1.17"
-  # alpine package: libiconv
+  # alpine package: gnu-libiconv-dev
   # homebrew formulae: libiconv
   files:
     - libiconv.a
     - iconv.pc
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/community/aarch64/gnu-libiconv-dev-1.17-r2.apk
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/community/aarch64/gnu-libiconv-dev-1.17-r2.apk
       sha256: "0c582555cc543b9b7c7cad834cb4caba6f01821cf49f0f68c1884a5bec974469"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/gnu-libiconv-dev-1.17-r2.apk
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/community/x86_64/gnu-libiconv-dev-1.17-r2.apk
       sha256: "0670ddd36b1ff98d7949852c2448d0c8817148d81a066c9daff62c1a1cd0e07f"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/libiconv/blobs/sha256:2621f09f8681897e86d452876e64f73156042713db36beb52c95074f648c3ee6
