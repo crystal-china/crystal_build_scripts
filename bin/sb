@@ -158,9 +158,9 @@ if echo "$*" |grep -F -qs -e '--target='; then
     cr_target=$(echo $* |sed 's#.*--target=\([a-z0-9_-]*\).*#\1#')
 
     if [[ "$cr_target" =~ -darwin ]]; then
-        build_args="$@ -Duse_libiconv"
+        build_args="$* -Duse_libiconv"
     else
-        build_args="$@"
+        build_args="$*"
     fi
 
     # delete --progress if pass this option.
@@ -175,6 +175,7 @@ if echo "$*" |grep -F -qs -e '--target='; then
         sed "s#.*#& -lunwind#" |
         tee $tmpfile
     chmod +x $tmpfile &&
+        cat $tmpfile &&
         bash $tmpfile
 else
     shards build "$@"
