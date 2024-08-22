@@ -23,7 +23,7 @@ lib
 └── x86_64-monterey
 ```
 
-3. Add `PROJECT_ROOT/bin` into system $PATH, then you can run `sb` script for cross build a Crystal program.
+3. Add `PROJECT_ROOT/bin` into system $PATH, then you can run `sb` script for cross build a Crystal program, you can always use `sb ...` as an alternative of `shards build ...`
 
 4. Entering the Crystal project you want to execute the build on, I use following command for built an AMD64 static binary which can copy into and running it on any linux host.
 
@@ -73,6 +73,23 @@ bin/college: Mach-O 64-bit arm64 executable, flags:<NOUNDEFS|DYLDLINK|TWOLEVEL|N
 
  I have been using this workflow for a long time, and it work quite well, so i don't want add unnecessary complexity for same purpose, don't misunderstand me, i use docker quite well, but I use it only necessary.
  
+## Current supported lib (alpine package name/macOS package name)
+
+- gc-dev/gdw-gc
+- gmp-dev/gmp
+- pcre2-dev/pcre2
+- libevent-static/libevent
+- libsodium-static/libsodium
+- openssl-libs-static/openssl@3
+- sqlite-static/sqlite
+- yaml-static/yaml
+- zlib-static/zlib
+- libxml2-static/libxml2
+- xz-static/xz (used by libxml2)
+- gnu-libiconv/libiconv (used only for macOS)
+
+If you use other third-party libraries, please feel free to submit an issue.
+
 ## Update libraries version
 
 ### Steps to update libraries version for alpine:
@@ -129,8 +146,6 @@ Then override specified yaml section use the above url,sha256 output part.
 Check [use_zig_cc_as_an_alternative_linker](docs/use_zig_cc_as_an_alternative_linker.md)
 
 ## Contributing
-
-If you use other third-party libraries, please feel free to submit an issue, Or
 
 1. Fork it (<https://github.com/crystal-china/hashr/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
