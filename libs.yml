@@ -46,6 +46,27 @@
       url: https://ghcr.io/v2/homebrew/core/gmp/blobs/sha256:b04023f65b8c79c45798a4bfd97fdbeb10f1bf9e8416e22e8eeedbd9b2a8c102
       sha256: "b04023f65b8c79c45798a4bfd97fdbeb10f1bf9e8416e22e8eeedbd9b2a8c102"
 
+- name: pcre2
+  version: "10.43-r0"
+  darwin_version: "10.44"
+  # alpine package: pcre2-dev
+  # homebrew formulae: pcre2
+  files:
+    - libpcre2-8.a
+  binaries:
+    - platform: aarch64-linux-musl
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/aarch64/pcre2-dev-10.43-r0.apk
+      sha256: "7b06e6e657dda84ba4e8325dd1d10866cede40bf4437e928bb9f36c9c8b3134c"
+    - platform: x86_64-linux-musl
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/x86_64/pcre2-dev-10.43-r0.apk
+      sha256: "c6198360f5693bd28784dda4bc34c84ea65a46441ad1d0d26b22ed6af4269878"
+    - platform: aarch64-monterey
+      url: https://ghcr.io/v2/homebrew/core/pcre2/blobs/sha256:fe61ece0fe110928cbd9d325552064c1bc2b98a3dd6cc9f4039d0d41ead7fa83
+      sha256: "fe61ece0fe110928cbd9d325552064c1bc2b98a3dd6cc9f4039d0d41ead7fa83"
+    - platform: x86_64-monterey
+      url: https://ghcr.io/v2/homebrew/core/pcre2/blobs/sha256:ba8ab5793b9399926030e574ed376c003749ea775ca62c713b732b8d35fc1bfc
+      sha256: "ba8ab5793b9399926030e574ed376c003749ea775ca62c713b732b8d35fc1bfc"
+
 - name: libevent
   version: "2.1.12-r7"
   darwin_version: "2.1.12"
@@ -111,27 +132,6 @@
       url: https://ghcr.io/v2/homebrew/core/openssl/3/blobs/sha256:06e6ff16eb23a8fd4dc9222e6cf5bcf2b680d250ba0233e6e0c0dc6e9616cb34
       sha256: "06e6ff16eb23a8fd4dc9222e6cf5bcf2b680d250ba0233e6e0c0dc6e9616cb34"
 
-- name: pcre2
-  version: "10.43-r0"
-  darwin_version: "10.44"
-  # alpine package: pcre2-dev
-  # homebrew formulae: pcre2
-  files:
-    - libpcre2-8.a
-  binaries:
-    - platform: aarch64-linux-musl
-      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/aarch64/pcre2-dev-10.43-r0.apk
-      sha256: "7b06e6e657dda84ba4e8325dd1d10866cede40bf4437e928bb9f36c9c8b3134c"
-    - platform: x86_64-linux-musl
-      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/x86_64/pcre2-dev-10.43-r0.apk
-      sha256: "c6198360f5693bd28784dda4bc34c84ea65a46441ad1d0d26b22ed6af4269878"
-    - platform: aarch64-monterey
-      url: https://ghcr.io/v2/homebrew/core/pcre2/blobs/sha256:fe61ece0fe110928cbd9d325552064c1bc2b98a3dd6cc9f4039d0d41ead7fa83
-      sha256: "fe61ece0fe110928cbd9d325552064c1bc2b98a3dd6cc9f4039d0d41ead7fa83"
-    - platform: x86_64-monterey
-      url: https://ghcr.io/v2/homebrew/core/pcre2/blobs/sha256:ba8ab5793b9399926030e574ed376c003749ea775ca62c713b732b8d35fc1bfc
-      sha256: "ba8ab5793b9399926030e574ed376c003749ea775ca62c713b732b8d35fc1bfc"
-
 - name: sqlite
   version: "3.45.3-r1"
   darwin_version: 3.46.1
@@ -156,7 +156,7 @@
 - name: yaml
   version: "0.2.5-r2"
   darwin_version: "0.2.5"
-  # alpine package: yaml-static, yaml-dev
+  # alpine package: yaml-static
   # homebrew formulae: libyaml
   files:
     - libyaml.a
@@ -194,6 +194,50 @@
     - platform: x86_64-monterey
       url: https://ghcr.io/v2/homebrew/core/zlib/blobs/sha256:56bbfa3d7bd6a5ccf17ffa53ab926e67f24e74bd64b4740b56fd96c312e37c44
       sha256: "56bbfa3d7bd6a5ccf17ffa53ab926e67f24e74bd64b4740b56fd96c312e37c44"
+
+- name: libxml2
+  version: "2.12.7"
+  darwin_versoin: "2.12.8"
+  # alpine package: libxml2-static
+  # homebrew formulae: libxml2
+  files:
+    - libxml2.a
+    - libxml2.2.dylib
+    - libxml2.dylib
+  binaries:
+    - platform: aarch64-linux-musl
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/aarch64/libxml2-static-2.12.7-r0.apk
+      sha256: "00ff7f8131b6de26d222d6340b0235a13dbb615767b6bd0afd2bae71cf806470"
+    - platform: x86_64-linux-musl
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/x86_64/libxml2-static-2.12.7-r0.apk
+      sha256: "2dc49b6894277ec3b2d805eb49b68e03bb5a04d0c35fd08d21fdf50454bbe54c"
+    - platform: aarch64-monterey
+      url: https://ghcr.io/v2/homebrew/core/libxml2/blobs/sha256:1e3c987fb48b4e15f129ed713aa0808b8774bf36584c358a2f5b7627ff54c2a7
+      sha256: "1e3c987fb48b4e15f129ed713aa0808b8774bf36584c358a2f5b7627ff54c2a7"
+    - platform: x86_64-monterey
+      url: https://ghcr.io/v2/homebrew/core/libxml2/blobs/sha256:5d61a00a0694e8be7aebe53de8a4b9744b6ca68fedefa6f6b06ba0363eacb772
+      sha256: "5d61a00a0694e8be7aebe53de8a4b9744b6ca68fedefa6f6b06ba0363eacb772"
+
+- name: xz
+  version: "5.6.2"
+  darwin_versoin: "5.6.2"
+  # alpine package: xz-static
+  # homebrew formulae: xz
+  files:
+    - liblzma.a
+  binaries:
+    - platform: aarch64-linux-musl
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/aarch64/xz-static-5.6.2-r0.apk
+      sha256: "d66cce16f20ae7f56daa3799f8235b88e264bdcae9c0e26ef6551fd99721b00a"
+    - platform: x86_64-linux-musl
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/x86_64/xz-static-5.6.2-r0.apk
+      sha256: "ea003a7c43e26820a4f51c95277e8065e77b6da0c83d8d1a35d7d91b75fc3401"
+    - platform: aarch64-monterey
+      url: https://ghcr.io/v2/homebrew/core/xz/blobs/sha256:e45fcf2977a8541a97f7efef3ccbc0fc782c597b3c340616ada6868e7cf31452
+      sha256: "e45fcf2977a8541a97f7efef3ccbc0fc782c597b3c340616ada6868e7cf31452"
+    - platform: x86_64-monterey
+      url: https://ghcr.io/v2/homebrew/core/xz/blobs/sha256:4eb1665050b038767bf09f561882b5c9b51233d6738b81427e262deaac2b3c1a
+      sha256: "4eb1665050b038767bf09f561882b5c9b51233d6738b81427e262deaac2b3c1a"
 
 # iconv only used by darwin
 - name: iconv
