@@ -7,7 +7,7 @@ If you are use linux, all dependencies is almost available, except zig compiler.
 - BASH (version > 4.0)
 - sed
 - zig compiler
-- Ruby (only if you want download the libraries by yourself, but i will upload those libraries as assets in release page later)
+- Ruby (Optional), It only necessary if you want download the libraries by yourself, I will upload those libraries as assets in [release page](https://github.com/crystal-china/magic-haversack/releases).
 
 ## How to use it.
 
