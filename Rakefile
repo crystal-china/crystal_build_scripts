@@ -84,7 +84,7 @@ libs.each do |lib|
 
         # collect SHA1 of all `.a` and `.pc` extracted files
         files_digest = Digest::SHA1.new
-        port_files = Dir.glob("#{tmp_port_path}/**/*.{a,pc}")
+        port_files = Dir.glob("#{tmp_port_path}/**/*.{a,pc,dylib}")
         port_files.each do |file|
           files_digest.update File.binread(file)
         end
@@ -119,7 +119,7 @@ end
 Rake::PackageTask.new("magic-haversack", HAVERSACK_VERSION) do |t|
   t.need_tar_xz = true
 
-  globs = SUPPORTED_PLATFORMS.map { |platform| "lib/#{platform}/**/*.{a,pc}" }
+  globs = SUPPORTED_PLATFORMS.map { |platform| "lib/#{platform}/**/*.{a,pc,dylib}" }
   t.package_files.include(globs)
 end
 
