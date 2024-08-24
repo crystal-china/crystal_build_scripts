@@ -218,6 +218,29 @@
       url: https://ghcr.io/v2/homebrew/core/libxml2/blobs/sha256:5d61a00a0694e8be7aebe53de8a4b9744b6ca68fedefa6f6b06ba0363eacb772
       sha256: "5d61a00a0694e8be7aebe53de8a4b9744b6ca68fedefa6f6b06ba0363eacb772"
 
+# - name: icu
+#   version: "74.2-r0"
+#   darwin_versoin: "74.2"
+#   # alpine package: icu-static
+#   # homebrew formulae: icu4c
+#   files:
+#     - libicuuc.a
+#     - libicudata.a
+#     - icui18n.a
+#   binaries:
+#     - platform: aarch64-linux-musl
+#       url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/aarch64/icu-static-74.2-r0.apk
+#       sha256: "35e04170050ce0bc1531253b3e17f12e41499b12423105b6615dc0518428d2a9"
+#     - platform: x86_64-linux-musl
+#       url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main/x86_64/icu-static-74.2-r0.apk
+#       sha256: "dae1e8a7ecc3511820c3af96e1a464749cd22e877f35bad4ad6844724fe1d610"
+#     - platform: aarch64-monterey
+#       url: https://github.com/crystal-china/magic-haversack/raw/not_download_dev_package/stubs.tar.gz
+#       sha256: "18e737e5fc8f142bf5cfcba98639dba40f5203191fe6b3fe93883e6b55fd132f"
+#     - platform: x86_64-monterey
+#       url: https://github.com/crystal-china/magic-haversack/raw/not_download_dev_package/stubs.tar.gz
+#       sha256: "18e737e5fc8f142bf5cfcba98639dba40f5203191fe6b3fe93883e6b55fd132f"
+
 - name: xz
   version: "5.6.2"
   darwin_versoin: "5.6.2"
@@ -239,7 +262,6 @@
       url: https://ghcr.io/v2/homebrew/core/xz/blobs/sha256:4eb1665050b038767bf09f561882b5c9b51233d6738b81427e262deaac2b3c1a
       sha256: "4eb1665050b038767bf09f561882b5c9b51233d6738b81427e262deaac2b3c1a"
 
-# iconv only used by darwin
 - name: iconv
   version: "1.17"
   darwin_versoin: "1.17"
@@ -250,11 +272,12 @@
     - iconv.pc
   binaries:
     - platform: aarch64-linux-musl
-      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/community/aarch64/gnu-libiconv-dev-1.17-r2.apk
-      sha256: "0c582555cc543b9b7c7cad834cb4caba6f01821cf49f0f68c1884a5bec974469"
+      url: https://github.com/crystal-china/magic-haversack/raw/not_download_dev_package/stubs.tar.gz
+      sha256: "18e737e5fc8f142bf5cfcba98639dba40f5203191fe6b3fe93883e6b55fd132f"
     - platform: x86_64-linux-musl
-      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/community/x86_64/gnu-libiconv-dev-1.17-r2.apk
-      sha256: "0670ddd36b1ff98d7949852c2448d0c8817148d81a066c9daff62c1a1cd0e07f"
+      url: https://github.com/crystal-china/magic-haversack/raw/not_download_dev_package/stubs.tar.gz
+      sha256: "18e737e5fc8f142bf5cfcba98639dba40f5203191fe6b3fe93883e6b55fd132f"
+      # iconv only used by darwin
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/libiconv/blobs/sha256:2621f09f8681897e86d452876e64f73156042713db36beb52c95074f648c3ee6
       sha256: "2621f09f8681897e86d452876e64f73156042713db36beb52c95074f648c3ee6"
