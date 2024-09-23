@@ -218,6 +218,7 @@
       url: https://ghcr.io/v2/homebrew/core/libxml2/blobs/sha256:5d61a00a0694e8be7aebe53de8a4b9744b6ca68fedefa6f6b06ba0363eacb772
       sha256: "5d61a00a0694e8be7aebe53de8a4b9744b6ca68fedefa6f6b06ba0363eacb772"
 
+# TODO: leave this comment for now, maybe need add it back when some issue happen.
 # - name: icu
 #   version: "74.2-r0"
 #   darwin_versoin: "74.2"
