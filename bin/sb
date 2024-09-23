@@ -168,15 +168,19 @@ if echo "$*" |grep -F -qs -e '--target='; then
 
     tmpfile="$(mktemp -d)/$$"
 
-    shards build ${build_args} "$@" |
-        grep '^cc ' |
-        sed "s#^cc#zig cc -target ${zig_target_map[$cr_target]}#" |
-        sed "s#-L[^ ]*#-L${SCRIPT_PARENT}/lib/${libname_map[$cr_target]}#" |
-        sed "s#.*#& -lunwind#" |
-        tee $tmpfile
-    chmod +x $tmpfile &&
-        cat $tmpfile &&
-        bash $tmpfile
+    build_output=$(shards build ${build_args} "$@")
+
+    if cc_output=$(echo "$build_output" |grep '^cc '); then
+        echo "$cc_output" |
+            sed "s#^cc#zig cc -target ${zig_target_map[$cr_target]}#" | # replace "cc" with "zig cc --target ???"
+            sed "s#-L[^ ]*#-L${SCRIPT_PARENT}/lib/${libname_map[$cr_target]}#" | # replace where to find lib
+            sed "s#.*#& -lunwind#" |        # Add -unwind is necessary for Crystal backtrace.
+            sed "s#-lxml2#-lxml2 -llzma#" | # Support built with libxml2
+            tee $tmpfile && bash $tmpfile
+    else
+        echo "$build_output"
+    fi
+
 else
     shards build "$@"
 fi

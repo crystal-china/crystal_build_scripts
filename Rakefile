@@ -15,11 +15,11 @@ directory "downloads"
 directory "lib"
 directory "tmp"
 
-CLEAN.concat(["lib", "tmp"])
-CLOBBER.concat(["downloads", "pkg"])
+CLEAN.push("lib", "tmp")
+CLOBBER.push("downloads", "pkg")
 
 # load libs.yml
-libs = YAML.safe_load(File.read("libs.yml"))
+libs = YAML.safe_load_file("libs.yml")
 
 # build list of platforms from `libs`
 SUPPORTED_PLATFORMS = Set.new
@@ -44,16 +44,14 @@ libs.each do |lib|
     directory downloads_dir
     directory pkg_dir
 
-    if found = binaries.find { |b| b["platform"] == platform }
-      short_platform = platform.split("-").first
-
+    if (found = binaries.find { |b| b["platform"] == platform })
       # save path before changing target
       tmp_port_path = File.join("tmp", port.port_path)
       port.target = downloads_dir
 
       task "fetch:#{platform}:#{lib["name"]}" => ["tmp", downloads_dir, pkg_dir] do
         # determine single or multiple files present
-        if url = found["url"]
+        if found["url"]
           port.files << {
             url: found["url"],
             sha256: found["sha256"],
@@ -86,7 +84,7 @@ libs.each do |lib|
 
         # collect SHA1 of all `.a` and `.pc` extracted files
         files_digest = Digest::SHA1.new
-        port_files = Dir.glob("#{tmp_port_path}/**/*.{a,pc}")
+        port_files = Dir.glob("#{tmp_port_path}/**/*.{a,pc,dylib}")
         port_files.each do |file|
           files_digest.update File.binread(file)
         end
@@ -121,9 +119,8 @@ end
 Rake::PackageTask.new("magic-haversack", HAVERSACK_VERSION) do |t|
   t.need_tar_xz = true
 
-  globs = SUPPORTED_PLATFORMS.map { |platform| "lib/#{platform}/**/*.{a,pc}" }
+  globs = SUPPORTED_PLATFORMS.map { |platform| "lib/#{platform}/**/*.{a,pc,dylib}" }
   t.package_files.include(globs)
-  t.package_files.include("bin/*-cc")
 end
 
 task "package" => ["fetch:all"]
