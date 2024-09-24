@@ -12,10 +12,10 @@
     - bdw-gc.pc
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/aarch64/gc-dev-8.2.6-r0.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/gc-dev-8.2.6-r0.apk
       sha256: "6a2eec3ee1117941e25549a044f4d8db8bfc9fe3083db767e50b50c7100e6770"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/x86_64/gc-dev-8.2.6-r0.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/gc-dev-8.2.6-r0.apk
       sha256: "b9d32564cd61897c56b3d57eb8cf573f9f38bd591f75f74d5b20bceddaaf94f2"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/bdw-gc/blobs/sha256:d98f35081558a6411f47913a4da75a1d72449e08534ea27e113f3872b52654b2
@@ -34,10 +34,10 @@
     - gmp.pc
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.18/main/aarch64/gmp-dev-6.2.1-r3.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/aarch64/gmp-dev-6.2.1-r3.apk
       sha256: "c05f5c9a8fe1400607761a6946137ec338e99595645cab3e3038374e4e46e461"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.18/main/x86_64/gmp-dev-6.2.1-r3.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/gmp-dev-6.2.1-r3.apk
       sha256: "c43fd9d028107e0b770a29fdd50d58fb7e202ca009275c925b1672ce2e996023"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/gmp/blobs/sha256:2115b33b8b4052f91ffb85e476c7fc0388cf4e614af1ce6453b35e6d25473911
@@ -55,10 +55,10 @@
     - libpcre2-8.a
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/aarch64/pcre2-dev-10.43-r0.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/pcre2-dev-10.43-r0.apk
       sha256: "7b06e6e657dda84ba4e8325dd1d10866cede40bf4437e928bb9f36c9c8b3134c"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/x86_64/pcre2-dev-10.43-r0.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/pcre2-dev-10.43-r0.apk
       sha256: "c6198360f5693bd28784dda4bc34c84ea65a46441ad1d0d26b22ed6af4269878"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/pcre2/blobs/sha256:fe61ece0fe110928cbd9d325552064c1bc2b98a3dd6cc9f4039d0d41ead7fa83
@@ -77,10 +77,10 @@
     - libevent_pthreads.a
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/aarch64/libevent-static-2.1.12-r7.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/libevent-static-2.1.12-r7.apk
       sha256: "f3624bd54613bb4a8aa2f7bdd7eff4e22e49faf53d0e0a8ba41da68ab82e44c9"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/x86_64/libevent-static-2.1.12-r7.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/libevent-static-2.1.12-r7.apk
       sha256: "5387ff4facac69d1b3a55b8061ac3d8961442fb0e2503ae37f03458f861d4728"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/libevent/blobs/sha256:a24d682548fb7cb11c127932240cced5d6fdb16feaaa6dc2ab3a7f0833e5df2e
@@ -98,10 +98,10 @@
     - libsodium.a
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/aarch64/libsodium-static-1.0.19-r0.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/libsodium-static-1.0.19-r0.apk
       sha256: "82677548636a1ad6296b39c8ff59da430439bbc25af6df80d3487720ee4101ef"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/x86_64/libsodium-static-1.0.19-r0.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/libsodium-static-1.0.19-r0.apk
       sha256: "778bd9dcecac0d71e3078d33e4422a91872907fcc7d1110f872f196ce1016950"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/libsodium/blobs/sha256:25377f9e16747b9af732be608a966b580287d0854c2d530f23eea1235bca1ff7
@@ -120,10 +120,10 @@
     - libssl.a
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/aarch64/openssl-libs-static-3.3.1-r3.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/openssl-libs-static-3.3.1-r3.apk
       sha256: "2664eb568dfb976abee01649b328cd1fc0105a12f2986e1a250fa15d37889821"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/x86_64/openssl-libs-static-3.3.1-r3.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/openssl-libs-static-3.3.1-r3.apk
       sha256: "7578a1f58ba953bed45a50134c5f6452ddfb757e6ac629c31bfdb555dcfdc549"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/openssl/3/blobs/sha256:0d88c67b408ad9520a28d195418d14875f2237fbd808114763f980a7a9190831
@@ -141,10 +141,10 @@
     - libsqlite3.a
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/aarch64/sqlite-static-3.45.3-r1.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/sqlite-static-3.45.3-r1.apk
       sha256: "68bb3320a2c6da35863883bbd9c53bc9be816f80a0c900be719544a40e2d271d"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/x86_64/sqlite-static-3.45.3-r1.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/sqlite-static-3.45.3-r1.apk
       sha256: "49349f9d2ad7ae52d09449b8c74e5335098fe957966c12fd908551164781a616"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:b04e7f909acd9753598e0d00ea3eb5f409d219c8efd48888725812e7ca68bfa1
@@ -162,10 +162,10 @@
     - libyaml.a
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/aarch64/yaml-static-0.2.5-r2.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/yaml-static-0.2.5-r2.apk
       sha256: "62f0f3e7b7d17a771a46c43ca4aeb0ad09de6d6456866c7e7f873331f1d169bc"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/x86_64/yaml-static-0.2.5-r2.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/yaml-static-0.2.5-r2.apk
       sha256: "e0c27556f81c73535902b34e483d9fca7dff0e141f810ba679787b59501519d7"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/libyaml/blobs/sha256:a436da33a05f805258c5951a365dec4e8d70a908dbe5dacdeb6b2ecd0efd5024
@@ -183,10 +183,10 @@
     - libz.a
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/aarch64/zlib-static-1.3.1-r1.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/zlib-static-1.3.1-r1.apk
       sha256: "d3e62012880c4990f9cd7839f91f793c98604c8f600446982b28a63edc96136f"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/x86_64/zlib-static-1.3.1-r1.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/zlib-static-1.3.1-r1.apk
       sha256: "0b1e0233a287cbd798d3e0c3769f9d6b18e1cfe5e989caeb212fefd546879a38"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/zlib/blobs/sha256:ebf10e203575beb64d6a8637ec2dc31774fa3141cfccab8ae7039f88b9efa7f6
@@ -206,10 +206,10 @@
     - libxml2.dylib
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/aarch64/libxml2-static-2.12.7-r0.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/libxml2-static-2.12.7-r0.apk
       sha256: "00ff7f8131b6de26d222d6340b0235a13dbb615767b6bd0afd2bae71cf806470"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/x86_64/libxml2-static-2.12.7-r0.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/libxml2-static-2.12.7-r0.apk
       sha256: "2dc49b6894277ec3b2d805eb49b68e03bb5a04d0c35fd08d21fdf50454bbe54c"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/libxml2/blobs/sha256:1e3c987fb48b4e15f129ed713aa0808b8774bf36584c358a2f5b7627ff54c2a7
@@ -230,10 +230,10 @@
 #     - icui18n.a
 #   binaries:
 #     - platform: aarch64-linux-musl
-#       url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/aarch64/icu-static-74.2-r0.apk
+#       url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/icu-static-74.2-r0.apk
 #       sha256: "35e04170050ce0bc1531253b3e17f12e41499b12423105b6615dc0518428d2a9"
 #     - platform: x86_64-linux-musl
-#       url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/x86_64/icu-static-74.2-r0.apk
+#       url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/icu-static-74.2-r0.apk
 #       sha256: "dae1e8a7ecc3511820c3af96e1a464749cd22e877f35bad4ad6844724fe1d610"
 #     - platform: aarch64-monterey
 #       url: https://github.com/crystal-china/magic-haversack/raw/not_download_dev_package/stubs.tar.gz
@@ -251,10 +251,10 @@
     - liblzma.a
   binaries:
     - platform: aarch64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/aarch64/xz-static-5.6.2-r0.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/aarch64/xz-static-5.6.2-r0.apk
       sha256: "d66cce16f20ae7f56daa3799f8235b88e264bdcae9c0e26ef6551fd99721b00a"
     - platform: x86_64-linux-musl
-      url: https://dl-cdn.alpinelinux.org/alpine/alpine/v3.20/main/x86_64/xz-static-5.6.2-r0.apk
+      url: https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/xz-static-5.6.2-r0.apk
       sha256: "ea003a7c43e26820a4f51c95277e8065e77b6da0c83d8d1a35d7d91b75fc3401"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/xz/blobs/sha256:e45fcf2977a8541a97f7efef3ccbc0fc782c597b3c340616ada6868e7cf31452
