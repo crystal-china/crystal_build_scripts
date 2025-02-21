@@ -168,7 +168,7 @@ if echo "$*" |grep -F -qs -e '--target='; then
 
     tmpfile="$(mktemp -d)/$$"
 
-    build_output=$(shards build ${build_args} "$@")
+    build_output=$(shards build ${build_args})
 
     if cc_output=$(echo "$build_output" |grep '^cc '); then
         echo "$cc_output" |
