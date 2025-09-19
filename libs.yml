@@ -118,11 +118,11 @@
     - libssl.a
   binaries:
     - platform: aarch64-linux-musl
-      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/aarch64/openssl-libs-static-3.5.0-r0.apk
-      sha256: "f4036e3c270da234873b2c72a4fce95e88729a4c99e81fa1757585198349c978"
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/aarch64/openssl-libs-static-3.5.2-r0.apk
+      sha256: "097fa7e04cd8a41faf5a91ddf268ac0ce3a3cbc181448b443a3a25eda5971b53"
     - platform: x86_64-linux-musl
-      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/x86_64/openssl-libs-static-3.5.0-r0.apk
-      sha256: "dfbdb955e53885e2d3583dd96ff55e5f35fb98d4b60d013c1b89a6eb255fbd64"
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/x86_64/openssl-libs-static-3.5.2-r0.apk
+      sha256: "f48bbfaf8f9578ed4a81c47846617b816c57be7fc38485458ad989f94815de74"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/openssl/3/blobs/sha256:0d88c67b408ad9520a28d195418d14875f2237fbd808114763f980a7a9190831
       sha256: "0d88c67b408ad9520a28d195418d14875f2237fbd808114763f980a7a9190831"
@@ -139,11 +139,11 @@
     - libsqlite3.a
   binaries:
     - platform: aarch64-linux-musl
-      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/aarch64/sqlite-static-3.49.2-r0.apk
-      sha256: "6474dbfd932dfa75bbb4b8a1310c3e10b006f6003fd4d6f8c578f4eb967f77f5"
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/aarch64/sqlite-static-3.49.2-r1.apk
+      sha256: "04769eef3c6792cc33d3609f8b833ec2e3f2b53d672dcd6e152840d2bee5a635"
     - platform: x86_64-linux-musl
-      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/x86_64/sqlite-static-3.49.2-r0.apk
-      sha256: "7a6cbcb512227a6c4d7da997bc428a209c3e98d6d82ae6916dacf1814360538c"
+      url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/x86_64/sqlite-static-3.49.2-r1.apk
+      sha256: "a54051b8ec2c91aeb79c43b5be36a898fd8ff83f1578112e86c3e28518f78718"
     - platform: aarch64-monterey
       url: https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:b04e7f909acd9753598e0d00ea3eb5f409d219c8efd48888725812e7ca68bfa1
       sha256: "b04e7f909acd9753598e0d00ea3eb5f409d219c8efd48888725812e7ca68bfa1"
