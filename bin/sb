@@ -173,10 +173,12 @@ if echo "$*" |grep -F -qs -e '--target='; then
         build_args="$*"
     fi
 
-    # delete --progress if passed this option.
+    # Delete --progress if passed this option.
     build_args=${build_args//--progress/}
-    # replace target with really target
+    # Replace target with really target
     build_args=${build_args//$cr_target/$cr_really_target}
+    # Add --cross-compile if user not added it.
+    build_args="${build_args//--cross-compile} --cross-compile"
 
     tmpfile="$(mktemp -d)/$$"
 
