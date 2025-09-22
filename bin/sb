@@ -143,28 +143,40 @@ if echo "$*" |grep -F -qs -e '--target='; then
     # For use hash map, BASH 4.0 is requried.
     declare -A zig_target_map=(
         ["x86_64-linux-musl"]="x86_64-linux-musl"
-        ["aarch64-linux-musl"]="aarch64-linux-musl"
-        ["x86_64-darwin"]="x86_64-macos-none"
-        ["aarch64-darwin"]="aarch64-macos-none"
+         ["aarch64-linux-musl"]="aarch64-linux-musl"
+         ["x86_64-darwin"]="x86_64-macos-none"
+         ["aarch64-darwin"]="aarch64-macos-none"
+         ["amd64"]="x86_64-linux-musl"
+         ["arm64"]="aarch64-linux-musl"
+         ["amd64-mac"]="x86_64-macos-none"
+         ["arm64-mac"]="aarch64-macos-none"
     )
 
     declare -A libname_map=(
         ["x86_64-linux-musl"]="x86_64-linux-musl"
-        ["aarch64-linux-musl"]="aarch64-linux-musl"
-        ["x86_64-darwin"]="x86_64-monterey"
-        ["aarch64-darwin"]="aarch64-monterey"
+         ["aarch64-linux-musl"]="aarch64-linux-musl"
+         ["x86_64-darwin"]="x86_64-ventura"
+         ["aarch64-darwin"]="aarch64-ventura"
+         ["amd64"]="x86_64-linux-musl"
+         ["arm64"]="aarch64-linux-musl"
+         ["amd64-mac"]="x86_64-ventura"
+         ["arm64-mac"]="aarch64-ventura"
     )
 
     cr_target=$(echo $* |sed 's#.*--target=\([a-z0-9_-]*\).*#\1#')
+    cr_really_target=${zig_target_map[$cr_target]}
+    lib_path="${SCRIPT_PARENT}/lib/${libname_map[$cr_target]}"
 
-    if [[ "$cr_target" =~ -darwin ]]; then
+    if [[ "$cr_really_target" =~ -macos-none ]]; then
         build_args="$* -Duse_libiconv"
     else
         build_args="$*"
     fi
 
-    # delete --progress if pass this option.
+    # delete --progress if passed this option.
     build_args=${build_args//--progress/}
+    # replace target with really target
+    build_args=${build_args//$cr_target/$cr_really_target}
 
     tmpfile="$(mktemp -d)/$$"
 
@@ -172,8 +184,8 @@ if echo "$*" |grep -F -qs -e '--target='; then
 
     if cc_output=$(echo "$build_output" |grep '^cc '); then
         echo "$cc_output" |
-            sed "s#^cc#zig cc -target ${zig_target_map[$cr_target]}#" | # replace "cc" with "zig cc --target ???"
-            sed "s#-L[^ ]*#-L${SCRIPT_PARENT}/lib/${libname_map[$cr_target]}#" | # Where to find static libraries.
+            sed "s#^cc#zig cc -target ${cr_really_target}#" | # replace "cc" with "zig cc --target ???"
+            sed "s#-L[^ ]*#-L${lib_path}#" | # Where to find static libraries.
             sed "s#.*#& -lunwind#" |        # Add -lunwind is necessary for Crystal backtrace feature.
             sed "s#-lxml2#-lxml2 -llzma#" | # Support built with libxml2
             tee $tmpfile && bash $tmpfile
