@@ -16,12 +16,12 @@
     - platform: x86_64-linux-musl
       url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/x86_64/gc-static-8.2.8-r1.apk
       sha256: "76868185ce8fe5c00cabd8edec79b178e65314ff4b93a302baa25392721b6818"
-    - platform: aarch64-monterey
-      url: https://ghcr.io/v2/homebrew/core/bdw-gc/blobs/sha256:d98f35081558a6411f47913a4da75a1d72449e08534ea27e113f3872b52654b2
-      sha256: "d98f35081558a6411f47913a4da75a1d72449e08534ea27e113f3872b52654b2"
-    - platform: x86_64-monterey
-      url: https://ghcr.io/v2/homebrew/core/bdw-gc/blobs/sha256:9f2c45bbb24805adaec4a3be2cbedad416ec8ff46a8ea558e1e11c0b7cec3ced
-      sha256: "9f2c45bbb24805adaec4a3be2cbedad416ec8ff46a8ea558e1e11c0b7cec3ced"
+    - platform: aarch64-ventura
+      url: https://ghcr.io/v2/homebrew/core/bdw-gc/blobs/sha256:55890248e3f2624e882660e38695e9090a8be1bff6c9a829ef35b0a30a890fee
+      sha256: "55890248e3f2624e882660e38695e9090a8be1bff6c9a829ef35b0a30a890fee"
+    - platform: x86_64-ventura
+      url: https://ghcr.io/v2/homebrew/core/bdw-gc/blobs/sha256:71c1beb334094059de83c81be4f1239e4ece22a1f7baf5c98d9682a2243b13bb
+      sha256: "71c1beb334094059de83c81be4f1239e4ece22a1f7baf5c98d9682a2243b13bb"
 
 - name: gmp
   version: "6.2.1-r3"
@@ -37,12 +37,12 @@
     - platform: x86_64-linux-musl
       url: https://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/gmp-dev-6.2.1-r3.apk
       sha256: "c43fd9d028107e0b770a29fdd50d58fb7e202ca009275c925b1672ce2e996023"
-    - platform: aarch64-monterey
-      url: https://ghcr.io/v2/homebrew/core/gmp/blobs/sha256:2115b33b8b4052f91ffb85e476c7fc0388cf4e614af1ce6453b35e6d25473911
-      sha256: "2115b33b8b4052f91ffb85e476c7fc0388cf4e614af1ce6453b35e6d25473911"
-    - platform: x86_64-monterey
-      url: https://ghcr.io/v2/homebrew/core/gmp/blobs/sha256:b04023f65b8c79c45798a4bfd97fdbeb10f1bf9e8416e22e8eeedbd9b2a8c102
-      sha256: "b04023f65b8c79c45798a4bfd97fdbeb10f1bf9e8416e22e8eeedbd9b2a8c102"
+    - platform: aarch64-ventura
+      url: https://ghcr.io/v2/homebrew/core/gmp/blobs/sha256:98c163edfbe7bdc0c14f88d7d34fa2764ecb9cab9f749600b861012700603260
+      sha256: "98c163edfbe7bdc0c14f88d7d34fa2764ecb9cab9f749600b861012700603260"
+    - platform: x86_64-ventura
+      url: https://ghcr.io/v2/homebrew/core/gmp/blobs/sha256:83ec5443c018c02036d88ae0dc8dc4237b3b38eb76a3cdd82148e7f841ffd39f
+      sha256: "83ec5443c018c02036d88ae0dc8dc4237b3b38eb76a3cdd82148e7f841ffd39f"
 
 - name: pcre2
   version: "10.43-r1"
@@ -58,12 +58,12 @@
     - platform: x86_64-linux-musl
       url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/x86_64/pcre2-static-10.43-r1.apk
       sha256: "905c6460874159a8a61e9127ef0b59fcdea5ca07a01a537d4379d35c8fdf65d1"
-    - platform: aarch64-monterey
-      url: https://ghcr.io/v2/homebrew/core/pcre2/blobs/sha256:fe61ece0fe110928cbd9d325552064c1bc2b98a3dd6cc9f4039d0d41ead7fa83
-      sha256: "fe61ece0fe110928cbd9d325552064c1bc2b98a3dd6cc9f4039d0d41ead7fa83"
-    - platform: x86_64-monterey
-      url: https://ghcr.io/v2/homebrew/core/pcre2/blobs/sha256:ba8ab5793b9399926030e574ed376c003749ea775ca62c713b732b8d35fc1bfc
-      sha256: "ba8ab5793b9399926030e574ed376c003749ea775ca62c713b732b8d35fc1bfc"
+    - platform: aarch64-ventura
+      url: https://ghcr.io/v2/homebrew/core/pcre2/blobs/sha256:6b38069079a641040e1cf8c408afbf902384d70bcc8fdbd445a9acc31e1e70d1
+      sha256: "6b38069079a641040e1cf8c408afbf902384d70bcc8fdbd445a9acc31e1e70d1"
+    - platform: x86_64-ventura
+      url: https://ghcr.io/v2/homebrew/core/pcre2/blobs/sha256:e71e438a81766aafffd719f90ba93cdaa158f91c08e19d96428fa841da15bd5a
+      sha256: "e71e438a81766aafffd719f90ba93cdaa158f91c08e19d96428fa841da15bd5a"
 
 - name: libevent
   version: "2.1.12-r8"
@@ -80,12 +80,12 @@
     - platform: x86_64-linux-musl
       url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/x86_64/libevent-static-2.1.12-r8.apk
       sha256: "851f6df32cc07ad3af4f240a60b87275ae923706311d4049c27784c3b292ba2e"
-    - platform: aarch64-monterey
-      url: https://ghcr.io/v2/homebrew/core/libevent/blobs/sha256:a24d682548fb7cb11c127932240cced5d6fdb16feaaa6dc2ab3a7f0833e5df2e
-      sha256: "a24d682548fb7cb11c127932240cced5d6fdb16feaaa6dc2ab3a7f0833e5df2e"
-    - platform: x86_64-monterey
-      url: https://ghcr.io/v2/homebrew/core/libevent/blobs/sha256:d0557018f19021fb4675a20d9cefda5e13646558c276ab7b4f01f96144b432f8
-      sha256: "d0557018f19021fb4675a20d9cefda5e13646558c276ab7b4f01f96144b432f8"
+    - platform: aarch64-ventura
+      url: https://ghcr.io/v2/homebrew/core/libevent/blobs/sha256:a75d453a7fe2aba1eaba334621b7bd9f0ff6f9e1f04aa400565f68711a9f6db4
+      sha256: "a75d453a7fe2aba1eaba334621b7bd9f0ff6f9e1f04aa400565f68711a9f6db4"
+    - platform: x86_64-ventura
+      url: https://ghcr.io/v2/homebrew/core/libevent/blobs/sha256:79a1036d3428c6ad8325803912e9ff0f74b8a8202908ae8594959c27e998c90b
+      sha256: "79a1036d3428c6ad8325803912e9ff0f74b8a8202908ae8594959c27e998c90b"
 
 - name: libsodium
   version: "1.0.20-r0"
@@ -101,12 +101,12 @@
     - platform: x86_64-linux-musl
       url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/x86_64/libsodium-static-1.0.20-r0.apk
       sha256: "69d9fb00136b62463a1edd61bc8b7a43daa27d05c9e74210a77ec781a4c0e47f"
-    - platform: aarch64-monterey
-      url: https://ghcr.io/v2/homebrew/core/libsodium/blobs/sha256:25377f9e16747b9af732be608a966b580287d0854c2d530f23eea1235bca1ff7
-      sha256: "25377f9e16747b9af732be608a966b580287d0854c2d530f23eea1235bca1ff7"
-    - platform: x86_64-monterey
-      url: https://ghcr.io/v2/homebrew/core/libsodium/blobs/sha256:0556f27feb8d4b5f31edf42e392eb4901daa5b9dbb8510499aa196c9e77134c6
-      sha256: "0556f27feb8d4b5f31edf42e392eb4901daa5b9dbb8510499aa196c9e77134c6"
+    - platform: aarch64-ventura
+      url: https://ghcr.io/v2/homebrew/core/libsodium/blobs/sha256:21b83b95eef039b914d712f4ac5d235d85e1f1143383dfa9c5359f0cc88fa08d
+      sha256: "21b83b95eef039b914d712f4ac5d235d85e1f1143383dfa9c5359f0cc88fa08d"
+    - platform: x86_64-ventura
+      url: https://ghcr.io/v2/homebrew/core/libsodium/blobs/sha256:5de3b5180b73678d93c4c69a77d662afd6aac0bfd71246be6e78cfacf97cc3d7
+      sha256: "5de3b5180b73678d93c4c69a77d662afd6aac0bfd71246be6e78cfacf97cc3d7"
 
 - name: openssl
   version: "3.3.1-r3"
@@ -123,12 +123,12 @@
     - platform: x86_64-linux-musl
       url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/x86_64/openssl-libs-static-3.5.2-r0.apk
       sha256: "f48bbfaf8f9578ed4a81c47846617b816c57be7fc38485458ad989f94815de74"
-    - platform: aarch64-monterey
-      url: https://ghcr.io/v2/homebrew/core/openssl/3/blobs/sha256:0d88c67b408ad9520a28d195418d14875f2237fbd808114763f980a7a9190831
-      sha256: "0d88c67b408ad9520a28d195418d14875f2237fbd808114763f980a7a9190831"
-    - platform: x86_64-monterey
-      url: https://ghcr.io/v2/homebrew/core/openssl/3/blobs/sha256:06e6ff16eb23a8fd4dc9222e6cf5bcf2b680d250ba0233e6e0c0dc6e9616cb34
-      sha256: "06e6ff16eb23a8fd4dc9222e6cf5bcf2b680d250ba0233e6e0c0dc6e9616cb34"
+    - platform: aarch64-ventura
+      url: https://ghcr.io/v2/homebrew/core/openssl/3/blobs/sha256:13545dea2fcfac0542556f969011892b2e0001b5ef0b71a787ca4ad714567ef5
+      sha256: "13545dea2fcfac0542556f969011892b2e0001b5ef0b71a787ca4ad714567ef5"
+    - platform: x86_64-ventura
+      url: https://ghcr.io/v2/homebrew/core/openssl/3/blobs/sha256:b51da4aaa601358273a5161c8aea4b19998ac1c48224a4b067c4c3e5475f9482
+      sha256: "b51da4aaa601358273a5161c8aea4b19998ac1c48224a4b067c4c3e5475f9482"
 
 - name: sqlite
   version: "3.49.2-r0"
@@ -144,12 +144,12 @@
     - platform: x86_64-linux-musl
       url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/x86_64/sqlite-static-3.49.2-r1.apk
       sha256: "a54051b8ec2c91aeb79c43b5be36a898fd8ff83f1578112e86c3e28518f78718"
-    - platform: aarch64-monterey
-      url: https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:b04e7f909acd9753598e0d00ea3eb5f409d219c8efd48888725812e7ca68bfa1
-      sha256: "b04e7f909acd9753598e0d00ea3eb5f409d219c8efd48888725812e7ca68bfa1"
-    - platform: x86_64-monterey
-      url: https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:0f6e20de908628b8b8b761b2c1231650757a508368860a4055fcc4ad8240ba72
-      sha256: "0f6e20de908628b8b8b761b2c1231650757a508368860a4055fcc4ad8240ba72"
+    - platform: aarch64-ventura
+      url: https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:0a2400a611fd89e1711699b3aa706ef0c5e8b4b01935615f1576498db536d31d
+      sha256: "0a2400a611fd89e1711699b3aa706ef0c5e8b4b01935615f1576498db536d31d"
+    - platform: x86_64-ventura
+      url: https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:d90906e7f13944a33f60a2955a13c40c092e5ec6b2cb3bc420a31ccdc656a08b
+      sha256: "d90906e7f13944a33f60a2955a13c40c092e5ec6b2cb3bc420a31ccdc656a08b"
 
 - name: yaml
   version: "0.2.5-r2"
@@ -165,12 +165,12 @@
     - platform: x86_64-linux-musl
       url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/x86_64/yaml-static-0.2.5-r2.apk
       sha256: "eefcf8dc02c3a1f71e95d90125b00a1fa11fae6544dbe52a4e3a9121ec50ac61"
-    - platform: aarch64-monterey
-      url: https://ghcr.io/v2/homebrew/core/libyaml/blobs/sha256:a436da33a05f805258c5951a365dec4e8d70a908dbe5dacdeb6b2ecd0efd5024
-      sha256: "a436da33a05f805258c5951a365dec4e8d70a908dbe5dacdeb6b2ecd0efd5024"
-    - platform: x86_64-monterey
-      url: https://ghcr.io/v2/homebrew/core/libyaml/blobs/sha256:dbd54ce703c6d8eb77e708f75b4730ad2653d28f6291c4a26dc22158beb3f210
-      sha256: "dbd54ce703c6d8eb77e708f75b4730ad2653d28f6291c4a26dc22158beb3f210"
+    - platform: aarch64-ventura
+      url: https://ghcr.io/v2/homebrew/core/libyaml/blobs/sha256:11239e8f5066c6d0d0718208d4eab518da00c7289f33c9c76c0a09ba5c0417c9
+      sha256: "11239e8f5066c6d0d0718208d4eab518da00c7289f33c9c76c0a09ba5c0417c9"
+    - platform: x86_64-ventura
+      url: https://ghcr.io/v2/homebrew/core/libyaml/blobs/sha256:b49e62f014b3e7d85a169b422b7521356700c7caaaea9f4901086cafe692a86e
+      sha256: "b49e62f014b3e7d85a169b422b7521356700c7caaaea9f4901086cafe692a86e"
 
 - name: zlib
   version: "1.3.1-r2"
@@ -186,12 +186,12 @@
     - platform: x86_64-linux-musl
       url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/x86_64/zlib-static-1.3.1-r2.apk
       sha256: "ce9ef449f675001490e3628c65cc8832c1354318ee3b82b8317b2ee5d2cd3cb4"
-    - platform: aarch64-monterey
-      url: https://ghcr.io/v2/homebrew/core/zlib/blobs/sha256:ebf10e203575beb64d6a8637ec2dc31774fa3141cfccab8ae7039f88b9efa7f6
-      sha256: "ebf10e203575beb64d6a8637ec2dc31774fa3141cfccab8ae7039f88b9efa7f6"
-    - platform: x86_64-monterey
-      url: https://ghcr.io/v2/homebrew/core/zlib/blobs/sha256:56bbfa3d7bd6a5ccf17ffa53ab926e67f24e74bd64b4740b56fd96c312e37c44
-      sha256: "56bbfa3d7bd6a5ccf17ffa53ab926e67f24e74bd64b4740b56fd96c312e37c44"
+    - platform: aarch64-ventura
+      url: https://ghcr.io/v2/homebrew/core/zlib/blobs/sha256:9033eedbd240076116fea9fa181882e75edee7fe0c5d2e3850258a185c52792f
+      sha256: "9033eedbd240076116fea9fa181882e75edee7fe0c5d2e3850258a185c52792f"
+    - platform: x86_64-ventura
+      url: https://ghcr.io/v2/homebrew/core/zlib/blobs/sha256:6012d7831245716d8507da3d1eb14ad274f8aa0b71b59275fe6bbbd6cebd787f
+      sha256: "6012d7831245716d8507da3d1eb14ad274f8aa0b71b59275fe6bbbd6cebd787f"
 
 - name: libxml2
   version: "2.13.8-r0"
@@ -209,12 +209,12 @@
     - platform: x86_64-linux-musl
       url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/x86_64/libxml2-static-2.13.8-r0.apk
       sha256: "5160da58615aef1b7b6f91700c094f90c81545529f6d71b67c5f1b3533f53a35"
-    - platform: aarch64-monterey
-      url: https://ghcr.io/v2/homebrew/core/libxml2/blobs/sha256:1e3c987fb48b4e15f129ed713aa0808b8774bf36584c358a2f5b7627ff54c2a7
-      sha256: "1e3c987fb48b4e15f129ed713aa0808b8774bf36584c358a2f5b7627ff54c2a7"
-    - platform: x86_64-monterey
-      url: https://ghcr.io/v2/homebrew/core/libxml2/blobs/sha256:5d61a00a0694e8be7aebe53de8a4b9744b6ca68fedefa6f6b06ba0363eacb772
-      sha256: "5d61a00a0694e8be7aebe53de8a4b9744b6ca68fedefa6f6b06ba0363eacb772"
+    - platform: aarch64-ventura
+      url: https://ghcr.io/v2/homebrew/core/libxml2/blobs/sha256:3981cb3adaf892fe72ede95d825535dde86727697198bf6967999a5690eac877
+      sha256: "3981cb3adaf892fe72ede95d825535dde86727697198bf6967999a5690eac877"
+    - platform: x86_64-ventura
+      url: https://ghcr.io/v2/homebrew/core/libxml2/blobs/sha256:c4eb4a4ead8d6a1a214d3a3b5c01f50b492927b6c9f5f3eedd6988708bdfa2f4
+      sha256: "c4eb4a4ead8d6a1a214d3a3b5c01f50b492927b6c9f5f3eedd6988708bdfa2f4"
 
 # TODO: leave this comment for now, maybe need add it back when some issue happen.
 # - name: icu
@@ -233,10 +233,10 @@
 #     - platform: x86_64-linux-musl
 #       url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/x86_64/icu-static-76.1-r0.apk
 #       sha256: "f6313cf475526a17a772a03a083ffa5202c7afdc63e4761035b29b6bfb122143"
-#     - platform: aarch64-monterey
+#     - platform: aarch64-ventura
 #       url: https://github.com/crystal-china/magic-haversack/raw/not_download_dev_package/stubs.tar.gz
 #       sha256: "18e737e5fc8f142bf5cfcba98639dba40f5203191fe6b3fe93883e6b55fd132f"
-#     - platform: x86_64-monterey
+#     - platform: x86_64-ventura
 #       url: https://github.com/crystal-china/magic-haversack/raw/not_download_dev_package/stubs.tar.gz
 #       sha256: "18e737e5fc8f142bf5cfcba98639dba40f5203191fe6b3fe93883e6b55fd132f"
 
@@ -254,12 +254,12 @@
     - platform: x86_64-linux-musl
       url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/x86_64/xz-static-5.8.1-r0.apk
       sha256: "f3c8758fb39dc911d89249d48647cc94479f94e6a1a96bbeef8b43cc1fe4bef9"
-    - platform: aarch64-monterey
-      url: https://ghcr.io/v2/homebrew/core/xz/blobs/sha256:e45fcf2977a8541a97f7efef3ccbc0fc782c597b3c340616ada6868e7cf31452
-      sha256: "e45fcf2977a8541a97f7efef3ccbc0fc782c597b3c340616ada6868e7cf31452"
-    - platform: x86_64-monterey
-      url: https://ghcr.io/v2/homebrew/core/xz/blobs/sha256:4eb1665050b038767bf09f561882b5c9b51233d6738b81427e262deaac2b3c1a
-      sha256: "4eb1665050b038767bf09f561882b5c9b51233d6738b81427e262deaac2b3c1a"
+    - platform: aarch64-ventura
+      url: https://ghcr.io/v2/homebrew/core/xz/blobs/sha256:82fef9b66eea967b55cd0f26fd7356d60a0b926c5d9eaaf9c300a46f21391af5
+      sha256: "82fef9b66eea967b55cd0f26fd7356d60a0b926c5d9eaaf9c300a46f21391af5"
+    - platform: x86_64-ventura
+      url: https://ghcr.io/v2/homebrew/core/xz/blobs/sha256:c0aedd30a078e08c7e67107506c61348d8259a2dce40697b77ff76f8c0dfc6d8
+      sha256: "c0aedd30a078e08c7e67107506c61348d8259a2dce40697b77ff76f8c0dfc6d8"
 
 - name: iconv
   version: "1.17"
@@ -275,10 +275,10 @@
     - platform: x86_64-linux-musl
       url: https://github.com/crystal-china/magic-haversack/raw/not_download_dev_package/stubs.tar.gz
       sha256: "18e737e5fc8f142bf5cfcba98639dba40f5203191fe6b3fe93883e6b55fd132f"
-      # iconv only used by darwin
-    - platform: aarch64-monterey
-      url: https://ghcr.io/v2/homebrew/core/libiconv/blobs/sha256:2621f09f8681897e86d452876e64f73156042713db36beb52c95074f648c3ee6
-      sha256: "2621f09f8681897e86d452876e64f73156042713db36beb52c95074f648c3ee6"
-    - platform: x86_64-monterey
-      url: https://ghcr.io/v2/homebrew/core/libiconv/blobs/sha256:9484d4d80192da3c0dfd8d3eaa8b391db0120dd7d259670b821a38de7f404539
-      sha256: "9484d4d80192da3c0dfd8d3eaa8b391db0120dd7d259670b821a38de7f404539"
+      # iconv only needed when built for darwin
+    - platform: aarch64-ventura
+      url: https://ghcr.io/v2/homebrew/core/libiconv/blobs/sha256:aa195231486c152454575759ec79d6b48b3aa3deab8ee37c0d19e99f98573eb5
+      sha256: "aa195231486c152454575759ec79d6b48b3aa3deab8ee37c0d19e99f98573eb5"
+    - platform: x86_64-ventura
+      url: https://ghcr.io/v2/homebrew/core/libiconv/blobs/sha256:6b53c95ddaf694117513b040836eeddfe8eb7c0b16f687ea5784cbfdc6a78ff9
+      sha256: "6b53c95ddaf694117513b040836eeddfe8eb7c0b16f687ea5784cbfdc6a78ff9"

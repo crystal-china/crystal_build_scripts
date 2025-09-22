@@ -136,8 +136,11 @@ Then override specified yaml section use the above url,sha256 output part.
 ### Steps to update libraries version For Darwin:
 
 1. Visit https://github.com/Homebrew/homebrew-core/tree/master/Formula
-2. Typing t, then filter with the package name(probably use different name with alpine)
-3. Select the oldest macOS code name which support both x86_64/aarch64. for now, we use monterey.
+2. Typing t, then filter with the package name(probably use different name with alpine, 
+   e.g. for `gc` library, need search file `bdw-gc.rb`), check `homebrew formulae` 
+   in libs.yml for correct file name.
+3. Check the bottle...do block, Select the oldest macOS code name which support 
+   both x86_64/aarch64. for now, we use ventura.
 4. Copy/Paste the specified sha256 hash into correct position.
 5. iconv is necessary only for Darwin, you don't need update it for alpine.
 
