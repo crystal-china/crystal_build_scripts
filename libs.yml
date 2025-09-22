@@ -4,7 +4,7 @@
 ---
 - name: gc
   version: "8.2.8-r1"
-  darwin_version: "8.2.6"
+  darwin_version: "8.2.8"
   # alpine package: gc-static
   # homebrew formulae: bdw-gc
   files:
@@ -46,7 +46,7 @@
 
 - name: pcre2
   version: "10.43-r1"
-  darwin_version: "10.44"
+  darwin_version: "10.46"
   # alpine package: pcre2-static
   # homebrew formulae: pcre2
   files:
@@ -132,7 +132,7 @@
 
 - name: sqlite
   version: "3.49.2-r0"
-  darwin_version: 3.46.1
+  darwin_version: 3.50.4
   # alpine package: sqlite-static
   # homebrew formulae: sqlite
   files:
@@ -195,7 +195,7 @@
 
 - name: libxml2
   version: "2.13.8-r0"
-  darwin_versoin: "2.12.8"
+  darwin_versoin: "2.13.8"
   # alpine package: libxml2-static
   # homebrew formulae: libxml2
   files:
@@ -242,7 +242,7 @@
 
 - name: xz
   version: "5.8.1-r0"
-  darwin_versoin: "5.6.2"
+  darwin_versoin: "5.8.1"
   # alpine package: xz-static
   # homebrew formulae: xz
   files:
@@ -263,7 +263,7 @@
 
 - name: iconv
   version: "1.17"
-  darwin_versoin: "1.17"
+  darwin_versoin: "1.18"
   # alpine package: gnu-libiconv-dev
   # homebrew formulae: libiconv
   files:
