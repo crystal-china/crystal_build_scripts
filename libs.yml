@@ -234,10 +234,10 @@
 #       url: https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main/x86_64/icu-static-76.1-r0.apk
 #       sha256: "f6313cf475526a17a772a03a083ffa5202c7afdc63e4761035b29b6bfb122143"
 #     - platform: aarch64-ventura
-#       url: https://github.com/crystal-china/magic-haversack/raw/not_download_dev_package/stubs.tar.gz
+#       url: https://github.com/crystal-china/crystal_build_scripts/raw/not_download_dev_package/stubs.tar.gz
 #       sha256: "18e737e5fc8f142bf5cfcba98639dba40f5203191fe6b3fe93883e6b55fd132f"
 #     - platform: x86_64-ventura
-#       url: https://github.com/crystal-china/magic-haversack/raw/not_download_dev_package/stubs.tar.gz
+#       url: https://github.com/crystal-china/crystal_build_scripts/raw/not_download_dev_package/stubs.tar.gz
 #       sha256: "18e737e5fc8f142bf5cfcba98639dba40f5203191fe6b3fe93883e6b55fd132f"
 
 - name: xz
@@ -270,10 +270,10 @@
     - libiconv.a
   binaries:
     - platform: aarch64-linux-musl
-      url: https://github.com/crystal-china/magic-haversack/raw/not_download_dev_package/stubs.tar.gz
+      url: https://github.com/crystal-china/crystal_build_scripts/raw/not_download_dev_package/stubs.tar.gz
       sha256: "18e737e5fc8f142bf5cfcba98639dba40f5203191fe6b3fe93883e6b55fd132f"
     - platform: x86_64-linux-musl
-      url: https://github.com/crystal-china/magic-haversack/raw/not_download_dev_package/stubs.tar.gz
+      url: https://github.com/crystal-china/crystal_build_scripts/raw/not_download_dev_package/stubs.tar.gz
       sha256: "18e737e5fc8f142bf5cfcba98639dba40f5203191fe6b3fe93883e6b55fd132f"
       # iconv only needed when built for darwin
     - platform: aarch64-ventura

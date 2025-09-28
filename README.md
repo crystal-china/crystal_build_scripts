@@ -7,11 +7,11 @@ If you are use linux, all dependencies is almost available, except zig compiler.
 - BASH (version > 4.0)
 - sed
 - zig compiler
-- Ruby (Optional), It only necessary if you want download the libraries by yourself, I will upload those libraries as assets in [release page](https://github.com/crystal-china/magic-haversack/releases).
+- Ruby (Optional), It only necessary if you want download the libraries by yourself, I will upload those libraries as assets in [release page](https://github.com/crystal-china/crystal_build_scripts/releases).
 
 ## How to use it.
 
-1.  git clone https://github.com/crystal-china/magic-haversack
+1.  git clone https://github.com/crystal-china/crystal_build_scripts
 2.  Run `bundle install` then `rake fetch:all`, You can skip this step if you download libraries from github release page instead, and extract it into `PROJECT_ROOT/lib`, as following:
 
 ```
@@ -39,7 +39,7 @@ Check following example for cross build a binary for `x86_64-linux-musl`, `aarch
 
 ```sh
  ╰─ $ sb --cross-compile --target=x86_64-linux-musl --static
-zig cc -target x86_64-linux-musl bin/college.o -o bin/college  -rdynamic -static -L/home/zw963/Crystal/crystal-china/magic-haversack/lib/x86_64-linux-musl -lgmp -lyaml -lz `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libssl || printf %s '-lssl -lcrypto'` `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libcrypto || printf %s '-lcrypto'` -lpcre2-8 -lgc -lpthread -ldl -levent -lunwind
+zig cc -target x86_64-linux-musl bin/college.o -o bin/college  -rdynamic -static -L/home/zw963/Crystal/crystal-china/crystal_build_scripts/lib/x86_64-linux-musl -lgmp -lyaml -lz `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libssl || printf %s '-lssl -lcrypto'` `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libcrypto || printf %s '-lcrypto'` -lpcre2-8 -lgc -lpthread -ldl -levent -lunwind
 
  ╰─ $ file bin/college
 bin/college: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), static-pie linked, with debug_info, not stripped
@@ -52,7 +52,7 @@ You can use `sb --target=amd64` instead.
 ```sh
 
  ╰─ $ sb --cross-compile --target=aarch64-linux-musl --static
-zig cc -target aarch64-linux-musl bin/college.o -o bin/college  -rdynamic -static -L/home/zw963/Crystal/crystal-china/magic-haversack/lib/aarch64-linux-musl -lgmp -lyaml -lz `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libssl || printf %s '-lssl -lcrypto'` `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libcrypto || printf %s '-lcrypto'` -lpcre2-8 -lgc -lpthread -ldl -levent -lunwind
+zig cc -target aarch64-linux-musl bin/college.o -o bin/college  -rdynamic -static -L/home/zw963/Crystal/crystal-china/crystal_build_scripts/lib/aarch64-linux-musl -lgmp -lyaml -lz `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libssl || printf %s '-lssl -lcrypto'` `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libcrypto || printf %s '-lcrypto'` -lpcre2-8 -lgc -lpthread -ldl -levent -lunwind
 
  ╰─ $ file bin/college
 bin/college: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), static-pie linked, with debug_info, not stripped
@@ -64,7 +64,7 @@ You can use `sb --target=arm64` instead.
 
 ```sh
  ╰─ $ sb --cross-compile --target=x86_64-darwin --static
-zig cc -target x86_64-macos-none bin/college.o -o bin/college  -rdynamic -static -L/home/zw963/Crystal/crystal-china/magic-haversack/lib/x86_64-monterey -lgmp -lyaml -lz `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libssl || printf %s '-lssl -lcrypto'` `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libcrypto || printf %s '-lcrypto'` -lpcre2-8 -lgc -lpthread -ldl -levent -liconv -lunwind
+zig cc -target x86_64-macos-none bin/college.o -o bin/college  -rdynamic -static -L/home/zw963/Crystal/crystal-china/crystal_build_scripts/lib/x86_64-monterey -lgmp -lyaml -lz `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libssl || printf %s '-lssl -lcrypto'` `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libcrypto || printf %s '-lcrypto'` -lpcre2-8 -lgc -lpthread -ldl -levent -liconv -lunwind
 
   ╰─ $ file bin/college
 bin/college: Mach-O 64-bit x86_64 executable, flags:<NOUNDEFS|DYLDLINK|TWOLEVEL|NO_REEXPORTED_DYLIBS|PIE|HAS_TLV_DESCRIPTORS>
@@ -77,7 +77,7 @@ You can use `sb --target=amd64-mac` instead.
 ```sh
 
  ╰─ $ sb --cross-compile --target=aarch64-darwin --static
-zig cc -target aarch64-macos-none bin/college.o -o bin/college  -rdynamic -static -L/home/zw963/Crystal/crystal-china/magic-haversack/lib/aarch64-monterey -lgmp -lyaml -lz `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libssl || printf %s '-lssl -lcrypto'` `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libcrypto || printf %s '-lcrypto'` -lpcre2-8 -lgc -lpthread -ldl -levent -liconv -lunwind
+zig cc -target aarch64-macos-none bin/college.o -o bin/college  -rdynamic -static -L/home/zw963/Crystal/crystal-china/crystal_build_scripts/lib/aarch64-monterey -lgmp -lyaml -lz `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libssl || printf %s '-lssl -lcrypto'` `command -v pkg-config > /dev/null && pkg-config --libs --silence-errors libcrypto || printf %s '-lcrypto'` -lpcre2-8 -lgc -lpthread -ldl -levent -liconv -lunwind
 
  ╰─ $ file bin/college
 bin/college: Mach-O 64-bit arm64 executable, flags:<NOUNDEFS|DYLDLINK|TWOLEVEL|NO_REEXPORTED_DYLIBS|PIE|HAS_TLV_DESCRIPTORS>
