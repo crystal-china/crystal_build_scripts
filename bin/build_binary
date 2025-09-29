@@ -1,0 +1,76 @@
+#!/bin/bash
+
+# 检测 all supported platform for alpine
+# podman run --rm mplatform/mquery alpine:latest
+ALLOWED_ARCHS=("linux/arm64/v8" "linux/arm/v7" "linux/arm/v6" "linux/amd64" "linux/386")
+
+platform=${PLATFORM-linux/amd64}
+
+for arch in "${ALLOWED_ARCHS[@]}"; do
+    if [ "$platform" == "$arch" ]; then
+        match_found=true
+        break # 找到匹配项，退出循环
+    fi
+done
+
+if [ -z "$match_found" ]; then
+    echo "Error: invalid platform '$platform'。"
+    echo "Use one of following:"
+    printf "  - %s\n" "${ALLOWED_ARCHS[@]}" # 使用 printf 更清晰地打印列表
+    exit 1 # 退出并返回错误码
+fi
+
+force="$1"
+
+set -eux
+
+tag_name=build_${platform}_binary
+docker_file=/tmp/Dockerfile.cc_build
+
+if ! podman images --format '{{.Repository}}' |grep -qs "localhost/$tag_name" || [[ "$force" == "-f" ]]; then
+    cat <<'HEREDOC' > $docker_file
+ARG FORCE_ARG
+ARG alpine_version=3.22
+ARG alpine_mirror=mirrors.ustc.edu.cn
+
+FROM alpine:$alpine_version
+
+ARG alpine_mirror
+RUN sed -i "s/dl-cdn.alpinelinux.org/$alpine_mirror/g" /etc/apk/repositories
+
+RUN set -eux; \
+    apk add \
+    --update \
+    gc-static pcre2-static libevent-static \
+    sqlite-static openssl-libs-static \
+    yaml-static \
+    zlib-static \
+    libxml2-static \
+    gmp-static \
+    xz-static \
+    g++ make automake libtool autoconf git \
+    ;
+
+WORKDIR /app
+
+# CMD (make clean); make CC=gcc LDFLAGS=-static
+CMD make CC=gcc LDFLAGS=-static
+HEREDOC
+
+    BUILD_ARGS="
+--platform $platform
+-t $tag_name \
+-f $docker_file
+"
+
+    if [[ "$force" == "-f" ]]; then
+        BUILD_ARGS="--build-arg FORCE_ARG=$(date +%s) $BUILD_ARGS"
+    fi
+
+    # 调试输出，使用 --progress=plain --no-cache
+    podman buildx build $BUILD_ARGS
+fi
+
+[[ "$force" == "-f" ]] && shift 1
+
+podman run --platform $platform -v $PWD:/app $tag_name "$@"

@@ -12,7 +12,7 @@ For more details on this part, check out the dedicated [README.md](/docs/readme_
 
 # Part 2: Podman-Powered Scripts
 
-This section contains two scripts that use [Podman](https://github.com/containers/podman). 
+This section contains several scripts that use [Podman](https://github.com/containers/podman). 
 
 These scripts handle the cross-compilation of AMD64/ARM64 static binaries within 
 an [alpine linux](https://pkgs.alpinelinux.org/packages) environment.

@@ -21,9 +21,9 @@ these awesome benefits:
 3. It's (way) faster than Docker.
 4. Say goodbye to fixuid!
 
-# How to use it.
+# How to build Crystal binary
 
-For a AMD64 static binary
+## For a Crystal AMD64 static binary
 
 ```sh
 # For shards managed project
@@ -33,9 +33,9 @@ $: crystal_build_amd64_binary # built binary will land in the `bin/` folder.
 $: crystal_build_amd64_binary foo.cr # built binary will land in current folder.
 ```
 
-For a ARM64 static binary
+## For a Crystal ARM64 static binary
 
-```crystal
+```sh
 # For shards managed project
 $: crystal_build_arm64_binary
 
@@ -43,6 +43,52 @@ $: crystal_build_arm64_binary
 $: crystal_build_arm64_binary foo.cr
 ```
 
-You can find all the default build arguments in the sample file: [build_flags.conf.sample](/bin/build_flags.conf.sample). 
+## Passing build flags
+
+You can find all the default build arguments in the sample file: [build_flags.conf.sample](/bin/build_flags.conf.sample).
+
+```conf
+compile_time_flags=-Dstrict_multi_assign -Dno_number_autocast -Duse_pcre2 -Dpreview_overload_order
+
+# Don't add --progress, it's not work well with this script!
+flags=--release --no-debug --stats --time
+
+link_flags=--link-flags=-Wl,-L/app --link-flags=-s --link-flags=-pie
+```
+
 Just rename that file to build_flags.conf, set your arguments there, and both scripts
 will automatically pick them up.
+
+The only option you can pass is `-f` (force). If you use it, the cache will be invalidated 
+and the script will rerun `shards install` to fetch all your dependencies again.
+
+## Cross-Compiling a static binary for general C programs
+
+You can also use this for general C programs, assuming the toolchains support it.
+
+```sh
+# To build an AMD64 binary (This is the default)
+$: build_binary
+
+# To build an ARM64 binary 
+$: PLATFORM=linux/arm64/v8 build_binary
+```
+
+By default, the script runs the command: `make CC=gcc LDFLAGS=-static`.
+
+You can easily override this default command by just passing your preferred command
+directly, like this:
+
+```sh
+$: build_binary make
+```
+
+currently support platform is:
+
+"linux/arm64/v8" "linux/arm/v7" "linux/arm/v6" "linux/amd64" "linux/386"
+
+You can run the command below to get additional platform information:
+
+```sh
+$ podman run --rm mplatform/mquery alpine:latest
+```
