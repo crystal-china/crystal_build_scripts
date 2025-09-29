@@ -17,8 +17,9 @@ You can switch to Podman easily and painlessly without any issues, plus you get
 these awesome benefits:
 
 1. No need to start a dockerd daemon anymore.
-2. It's (way) faster than Docker.
-3. Say goodbye to fixuid!
+2. podman = docker + docker-compose + docker buildx + pod manager
+3. It's (way) faster than Docker.
+4. Say goodbye to fixuid!
 
 # How to use it.
 
