@@ -7,7 +7,7 @@ require "rake/packagetask"
 require "yaml"
 
 # extend MiniPortile for local compilation
-require_relative "src/custom_portile"
+require_relative "scripts/custom_portile"
 
 HAVERSACK_VERSION = "0.6.1"
 
