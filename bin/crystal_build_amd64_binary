@@ -1,0 +1,78 @@
+#!/bin/bash
+
+cr_file="$1"
+ROOT=$(dirname `readlink -e $0`)
+
+set -eu
+
+tag_name=crystal_build_amd64_binary
+docker_file=/tmp/Dockerfile.crystal_amd64_build
+
+cat <<'HEREDOC' > $docker_file
+# -*- mode: dockerfile-ts; -*-
+
+ARG alpine_mirror=mirrors.ustc.edu.cn
+
+FROM crystallang/crystal:1-alpine AS official_release
+
+ARG alpine_mirror
+RUN sed -i "s/dl-cdn.alpinelinux.org/$alpine_mirror/g" /etc/apk/repositories
+
+WORKDIR /app
+
+ARG FORCE_ARG
+
+ARG flags="--release --no-debug --stats --time"
+ARG compile_time_flags="-Dstrict_multi_assign -Dno_number_autocast \
+    -Duse_pcre2 -Dpreview_overload_order"
+ARG link_flags="--link-flags=-Wl,-L/app --link-flags=-s --link-flags=-pie"
+
+RUN which shards &>/dev/null && \
+    ( \
+        shards install \
+        --production \
+        --ignore-crystal-version \
+        --skip-postinstall \
+        --skip-executables \
+    ) \
+    || \
+       true
+
+# 使后面的 CMD 命令 cache 失效
+ARG CACHEBUST_ARG
+
+# 这里不要加 --progress, 加了 grep 无法匹配到 cc 的输出结果
+RUN shards build --production \
+    --static \
+    $flags $compile_time_flags $link_flags
+HEREDOC
+
+set +u
+if [ -f "$cr_file" ] && echo "$cr_file" |grep -qs "\.cr$"; then
+    sed -i "s#shards build --production#crystal build ${cr_file}#g" $docker_file
+    shift 1
+fi
+set -u
+
+BUILD_ARGS="
+--build-arg CACHEBUST_ARG=$(date +%s) \
+-v $PWD:/app \
+-t $tag_name \
+-f $docker_file \
+.
+"
+
+if [ -f "$ROOT/build_flags.conf" ]; then
+    BUILD_ARGS="--build-arg-file $ROOT/build_flags.conf $BUILD_ARGS"
+fi
+
+if [[ "$cr_file" == "-f" ]]; then
+    BUILD_ARGS="--build-arg FORCE_ARG=$(date +%s) $BUILD_ARGS"
+    shift 1
+fi
+
+# 调试输出，使用 --progress=plain --no-cache
+# 如果使用 podman, 已经帮你处理了 -v $PWD:/app 时会遇到的权限的问题，爽歪歪
+podman build $BUILD_ARGS
+
+# podman run -v $PWD:/app $tag_name "${@}"

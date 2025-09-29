@@ -1,0 +1,138 @@
+#!/bin/bash
+
+cr_file=$1
+ROOT=$(dirname `readlink -e $0`)
+
+set -eu
+
+platform=linux/arm64/v8
+tag_name=crystal_build_arm64_binary
+docker_file=/tmp/Dockerfile.crystal_arm64_build
+
+cat <<'HEREDOC' > $docker_file
+# -*- mode: dockerfile-ts; -*-
+
+# 确保 build 和 linking 是同一个 alpine 版本
+ARG alpine_version=3.22
+# mirrors.ustc.edu.cn mirrors.tuna.tsinghua.edu.cn
+ARG alpine_mirror=mirrors.ustc.edu.cn
+
+# =============== 使用本地主机相同的架构 cross compile ===============
+
+# 如果不指定 --platform, docker 会自动选择和命令行 --platform 指定的相同架构。
+# 这里强制指定使用和宿主机相同的架构进行 cross compile 操作。
+# 你当然可以在 ARM64 中完成编译 + 链接所有步骤，但是使用宿主机相同平台编译性能好得多。
+FROM --platform=$BUILDPLATFORM alpine:$alpine_version AS cross_compile
+
+ARG alpine_mirror
+RUN sed -i "s/dl-cdn.alpinelinux.org/$alpine_mirror/g" /etc/apk/repositories
+
+# crystal 依赖：libevent-dev libevent-static llvm16-libs musl-dev pcre2-dev gc-dev gcc
+RUN set -eux; \
+    apk add \
+    --update \
+    ca-certificates \
+    yaml-dev \
+    openssl-dev \
+    zlib-dev \
+    libunwind-dev \
+    libssh2-dev \
+    lz4-dev \
+    sqlite-dev \
+    libxml2-dev \
+    tzdata \
+    crystal shards \
+    ;
+
+WORKDIR /app
+
+# 如果需要重新运行 shards install，取消注释，其目的是使后面的 RUN 命令 cache 失效
+ARG FORCE_ARG
+
+ARG compile_time_flags="-Dstrict_multi_assign -Dno_number_autocast \
+    -Duse_pcre2 -Dpreview_overload_order"
+ARG link_flags="--link-flags=-Wl,-L/app --link-flags=-s --link-flags=-pie"
+ARG flags="--release --no-debug --stats --time"
+
+RUN which shards &>/dev/null && \
+    ( \
+        shards install \
+        --production \
+        --ignore-crystal-version \
+        --skip-postinstall \
+        --skip-executables \
+    ) \
+    || \
+       true
+
+ARG CACHEBUST_ARG
+
+# 这里不要加 --progress, 加了 grep 无法匹配到 cc 的输出结果
+RUN shards build --production \
+    --cross-compile --target=aarch64-linux-musl --static \
+    $flags $compile_time_flags $link_flags $cross_compile_flags |grep '^cc ' |tee bin/app.sh
+
+# bin/app.sh 必须不为空
+RUN test -s bin/app.sh
+
+# ============================== 使用目标系统架构 link binary ==============================
+
+# 如果这里不指定 --platform, 则 docker 会自动选择根据命令行 --platform 指定的架构
+# 因为命令行需要指定 --platform linux/arm64/v8，因此，这里使用  ARM64 架构
+FROM alpine:$alpine_version as target_linking
+
+ARG alpine_mirror
+RUN sed -i "s/dl-cdn.alpinelinux.org/$alpine_mirror/g" /etc/apk/repositories
+
+# Add trusted CAs for communicating with external services and required build tooling
+# 额外添加了 -dev 包，也允许编译动态版本。
+# g++ 依赖 libc-dev, libc-dev 依赖 musl-dev, g++ 也依赖 gcc
+RUN set -eux; \
+    apk add \
+    --update \
+    gc-static pcre2-static libevent-static \
+    sqlite-static openssl-libs-static \
+    yaml-static \
+    zlib-static \
+    libxml2-static \
+    gmp-static \
+    xz-static \
+    g++ make automake libtool autoconf git \
+    ;
+
+WORKDIR /app
+
+ARG CACHEBUST_ARG
+RUN sh -ex bin/app.sh
+HEREDOC
+
+set +u
+if [ -f "$cr_file" ] && echo "$cr_file" |grep -qs "\.cr$"; then
+    sed -i "s#shards build --production#crystal build ${cr_file}#g" $docker_file
+    shift 1
+fi
+set -u
+
+BUILD_ARGS="
+--platform $platform \
+--build-arg CACHEBUST_ARG=$(date +%s) \
+-v $PWD:/app \
+-t $tag_name \
+-f $docker_file \
+.
+"
+
+if [ -f "$ROOT/build_flags.conf" ]; then
+    BUILD_ARGS="--build-arg-file $ROOT/build_flags.conf $BUILD_ARGS"
+fi
+
+if [[ "$cr_file" == "-f" ]]; then
+    BUILD_ARGS="--build-arg FORCE_ARG=$(date +%s) $BUILD_ARGS"
+    shift 1
+fi
+
+
+# 调试输出，使用 --progress=plain --no-cache
+podman buildx build $BUILD_ARGS --target cross_compile
+
+podman buildx build $BUILD_ARGS --target target_linking

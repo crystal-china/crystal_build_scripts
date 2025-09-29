@@ -3,3 +3,4 @@ lib/
 pkg/
 tmp/
 lib.tar.gz
+bin/build_flags.conf
