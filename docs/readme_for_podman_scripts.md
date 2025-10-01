@@ -1,12 +1,7 @@
 # Dependencies
 
-You need run it use [podman](https://github.com/containers/podman), for how to install it, check [Installation Instructions](instli)
-
-You'll need to run this using [podman](https://github.com/containers/podman). Check out the [Installation Instructions](instli)
+You'll need to run this using [podman](https://github.com/containers/podman). check out the [Installation Instructions](instli)
 for how to set it up.
-
-podman share same usage with docker, maybe it works when use [docker](https://download.docker.com/linux/static/stable/) instead,
-but this isn't guaranteed， 
 
 Podman works pretty much the same way as Docker, so using Docker might work instead, 
 but I can't guarantee it.
